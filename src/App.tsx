@@ -1,9 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-function App() {
+import Landing from './pages/landing';
+import Login from './pages/login';
+
+
+const App: React.FC = () => {
   return (
     <div>
-      <h1>Typescript test</h1>
+      <BrowserRouter>
+        <Route path='/' exact component={Landing} />
+        <Route path='/login' exact component={Login} />
+      </BrowserRouter>
     </div>
   );
 }
