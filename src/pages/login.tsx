@@ -34,7 +34,7 @@ export default class Login extends Component<Props, State> {
         });
     }
 
-    onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
 
     }
@@ -65,10 +65,18 @@ export default class Login extends Component<Props, State> {
                         type='submit'
                         id="login-button"
                     >
-                        Login
+                        <span>Login</span>
                     </button>
                     <br /> <br />
-                    <hr style={{ width: '70%', backgroundColor: 'black' }} />
+                    <hr style={{ width: '70%', backgroundColor: 'rgb(51,204,255' }} />
+
+                    <footer
+                        id='login-footer'
+                    >
+                        <a href='#'>Register </a>
+                        <span>| </span>
+                        <a href='#'>Forgot Password</a>
+                    </footer>
                 </form>
             </body>
         )
