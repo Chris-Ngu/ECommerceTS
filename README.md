@@ -1,2 +1,5 @@
-# EcommerceTS
-A sample ecommerce webpage written w/ React and Typescript
+# Blink
+
+### Technologies
+* TypeScript 
+* MySQL
