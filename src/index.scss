@@ -17,6 +17,18 @@ code {
 // ---------------------------------------------------------------------------- 
 
 // Login Page
+// Add drop shadow, Font, and button styling
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgb(84,84,84), rgb(120,120,120)) !important;
+  
+  #login-title {
+    color: rgb(51,204,255);
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+  }
+}
 
 #login-container {
   position: fixed;
@@ -24,17 +36,32 @@ code {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  width: 350px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+
+  box-shadow: 10px 10px rgb(64,64,64);
+  
+
   #login-input {
-    width: 97%;
-    height: 25px;
-    font-size: 13px;
+    width: 90%;
+    height: 30px;
+    font-size: 16px;
     border-radius: 7px;
     text-align: center;
+    border-color: rgb(190,190,190);
+  }
+  #login-input:focus {
+    outline: none;
   }
    
   #login-button {
-    width: 100%;
-    height: 30px;
+    width: 92%;
+    height: 34px;
     border-radius: 7px;
+    border-color: rgb(190,190,190);
+    background-color: rgb(186,186,186);
   }
 }

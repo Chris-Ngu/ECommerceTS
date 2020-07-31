@@ -23,9 +23,12 @@ export default class Login extends Component<Props, State> {
 
     render() {
         return (
-            <div>
-                <form id='login-container'>
-                    <h1>EnterpriseSurplus</h1>
+            <body
+                id='background'>
+
+                <form
+                    id='login-container'>
+                    <h1 id="login-title">Blink</h1>
                     <input
                         type='text'
                         id='login-input'
@@ -44,10 +47,10 @@ export default class Login extends Component<Props, State> {
                     >
                         Login
                     </button>
-                    <br/> <br/>
-                    <hr/>
+                    <br /> <br />
+                    <hr style={{ width: '70%', backgroundColor: 'black' }} />
                 </form>
-            </div>
+            </body>
         )
     }
 }
