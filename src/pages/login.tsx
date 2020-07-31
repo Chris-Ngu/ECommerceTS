@@ -18,7 +18,25 @@ export default class Login extends Component<Props, State> {
             password: ''
         }
 
-        //Set function bindings here
+        this.onUsernameChange = this.onUsernameChange.bind(this);
+        this.onPasswordChange = this.onPasswordChange.bind(this);
+    }
+
+    onUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            username: e.target.value
+        });
+    }
+
+    onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            password: e.target.value
+        });
+    }
+
+    onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => { 
+        e.preventDefault();
+
     }
 
     render() {
@@ -33,12 +51,14 @@ export default class Login extends Component<Props, State> {
                         type='text'
                         id='login-input'
                         placeholder='Username'
+                        onChange={this.onUsernameChange}
                     />
                     <br /> <br />
                     <input
                         type='password'
                         id="login-input"
                         placeholder='Password'
+                        onChange={this.onPasswordChange}
                     />
                     <br /> <br />
                     <button
