@@ -1,7 +1,9 @@
 /*
-    Bind all submits and handle each request
-*/
+    Test input binds
+    work on 'onSubmit for login and register
+    add mysql backend
 
+*/
 import React, { Component } from 'react';
 
 interface Props {
@@ -9,8 +11,14 @@ interface Props {
 }
 
 interface State {
-    password: string;
-    email: string;
+    loginEmail: string;
+    loginPassword: string;
+
+    registerEmail: string;
+    registerPassword: string;
+    registerConfirmPassword: string;
+
+    forgotEmail: string;
 }
 
 export default class Login extends Component<Props, State> {
@@ -18,26 +26,64 @@ export default class Login extends Component<Props, State> {
         super(props);
 
         this.state = {
-            password: '',
-            email: ''
-        }
+            loginEmail: '',
+            loginPassword: '',
 
-        this.onUsernameChange = this.onUsernameChange.bind(this);
-        this.onPasswordChange = this.onPasswordChange.bind(this);
+            registerEmail: '',
+            registerPassword: '',
+            registerConfirmPassword: '',
+
+            forgotEmail: ''
+        };
+
+        this.onLoginEmailChange = this.onLoginEmailChange.bind(this);
+        this.onLoginPasswordChange = this.onLoginPasswordChange.bind(this);
+
+        this.onRegisterEmailChange = this.onRegisterEmailChange.bind(this);
+        this.onRegisterPasswordChange = this.onRegisterPasswordChange.bind(this);
+        this.onRegisterConfirmChange = this.onRegisterConfirmChange.bind(this);
+
+        this.onForgotEmailChange = this.onForgotEmailChange.bind(this);
 
         this.register = this.register.bind(this);
+        this.forgotPassword = this.forgotPassword.bind(this);
         this.backToLoginFromRegister = this.backToLoginFromRegister.bind(this);
+        this.backToLoginFromForgot = this.backToLoginFromForgot.bind(this);
     }
 
-    onUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onLoginEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
-            email: e.target.value
+            loginEmail: e.target.value
         });
     }
 
-    onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onLoginPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
-            password: e.target.value
+            loginPassword: e.target.value
+        });
+    }
+
+    onRegisterEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            registerEmail: e.target.value
+        });
+    }
+
+    onRegisterPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            registerEmail: e.target.value
+        });
+    }
+
+    onRegisterConfirmChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            registerConfirmPassword: e.target.value
+        });
+    }
+
+    onForgotEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            forgotEmail: e.target.value
         });
     }
 
@@ -115,17 +161,20 @@ export default class Login extends Component<Props, State> {
                             Blink
                         </h1>
                         <img
+                            alt='Blink Logo'
                             id='login-pic'
                             src={require('../images/logo.png')}
                         />
                     </header>
+
+                    {/* LOGIN FORM */}
                     <form id='login-form'>
                         <input
                             type='text'
                             id='login-input'
                             placeholder='Email'
                             required={true}
-                            onChange={this.onUsernameChange}
+                            onChange={this.onLoginEmailChange}
                         />
                         <br /> <br />
                         <input
@@ -133,7 +182,7 @@ export default class Login extends Component<Props, State> {
                             id="login-input"
                             placeholder='Password'
                             required={true}
-                            onChange={this.onPasswordChange}
+                            onChange={this.onLoginPasswordChange}
                         />
                         <br /> <br />
                         <button
@@ -149,6 +198,7 @@ export default class Login extends Component<Props, State> {
                             id='login-footer'
                         >
                             <a
+                                href='#register'
                                 id='login-hover'
                                 onClick={this.register}
                             >
@@ -156,18 +206,21 @@ export default class Login extends Component<Props, State> {
                             </a>
                             <span>| </span>
                             <a
+                                href="#forgot"
                                 id='login-hover'
                                 onClick={this.forgotPassword}
                             >Forgot Password</a>
                         </footer>
                     </form>
 
+                    {/*REGISTER FORM */}
                     <form id='register-form'>
                         <input
                             type='text'
                             id='login-input'
                             placeholder='Email'
                             required={true}
+                            onChange={this.onRegisterEmailChange}
                         />
                         <br /> <br />
                         <input
@@ -175,6 +228,7 @@ export default class Login extends Component<Props, State> {
                             id='login-input'
                             placeholder='Password'
                             required={true}
+                            onChange={this.onRegisterPasswordChange}
                         />
                         <br /> <br />
                         <input
@@ -182,6 +236,7 @@ export default class Login extends Component<Props, State> {
                             id='login-input'
                             placeholder='Confirm Password'
                             required={true}
+                            onChange={this.onRegisterConfirmChange}
 
                         />
                         <br /> <br />
@@ -201,6 +256,7 @@ export default class Login extends Component<Props, State> {
                         </button>
                     </form>
 
+                    {/*FORGOT FORM */}
                     <form
                         id='forgot-form'
                     >
@@ -209,6 +265,7 @@ export default class Login extends Component<Props, State> {
                             id='login-input'
                             required={true}
                             placeholder="Email"
+                            onChange={this.onForgotEmailChange}
                         />
                         <br /> <br />
                         <button
