@@ -21,7 +21,6 @@ code {
 // ---------------------------------------------------------------------------- 
 
 // Login Page
-// Add Font, and button styling
 
 #background {
   height: 100vh;
@@ -47,6 +46,7 @@ code {
   border-radius: 10px;
 
   box-shadow: 10px 10px rgb(64,64,64);
+  transition: padding-bottom 0.1s linear;
   
 
   #login-input {
@@ -118,4 +118,20 @@ code {
     }
   }
 
+}
+
+#register-form {
+  position: absolute;
+  width: 100%;
+  top: 24%;
+  margin-bottom: 20px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+#login-form {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
 }
