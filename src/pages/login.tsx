@@ -79,7 +79,7 @@ export default class Login extends Component<Props, State> {
         forgot.style.visibility = 'hidden';
         forgot.style.opacity = '0';
 
-        login.style.visibility ='visible';
+        login.style.visibility = 'visible';
         login.style.opacity = '1';
 
         container.style.height = '315px';
@@ -108,8 +108,17 @@ export default class Login extends Component<Props, State> {
                 <div
                     id='login-container'>
 
-                    <h1 id="login-title">Blink</h1>
-
+                    <header id='login-header'>
+                        <h1
+                            id="login-title"
+                        >
+                            Blink
+                        </h1>
+                        <img
+                            id='login-pic'
+                            src={require('../images/logo.png')}
+                        />
+                    </header>
                     <form id='login-form'>
                         <input
                             type='text'
@@ -208,7 +217,7 @@ export default class Login extends Component<Props, State> {
                         >
                             <span>Continue</span>
                         </button>
-                        <br/> <br/>
+                        <br /> <br />
                         <button
                             type='button'
                             id='login-button'
