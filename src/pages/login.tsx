@@ -1,3 +1,7 @@
+/*
+    Bind all submits and handle each request
+*/
+
 import React, { Component } from 'react';
 
 interface Props {
@@ -5,8 +9,8 @@ interface Props {
 }
 
 interface State {
-    username: string;
     password: string;
+    email: string;
 }
 
 export default class Login extends Component<Props, State> {
@@ -14,19 +18,20 @@ export default class Login extends Component<Props, State> {
         super(props);
 
         this.state = {
-            username: '',
-            password: ''
+            password: '',
+            email: ''
         }
 
         this.onUsernameChange = this.onUsernameChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
+
         this.register = this.register.bind(this);
-        this.backToLogin = this.backToLogin.bind(this);
+        this.backToLoginFromRegister = this.backToLoginFromRegister.bind(this);
     }
 
     onUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
-            username: e.target.value
+            email: e.target.value
         });
     }
 
@@ -53,11 +58,11 @@ export default class Login extends Component<Props, State> {
 
         container.style.paddingBottom = '60px';
     }
-    backToLogin = () => {
+    backToLoginFromRegister = () => {
         const login: HTMLElement = document.getElementById('login-form')!;
         const register: HTMLElement = document.getElementById('register-form')!;
         const container: HTMLElement = document.getElementById('login-container')!;
-        
+
         login.style.visibility = 'visible';
         login.style.opacity = '1';
 
@@ -66,6 +71,34 @@ export default class Login extends Component<Props, State> {
 
         container.style.paddingBottom = '0px';
     }
+    backToLoginFromForgot = () => {
+        const forgot: HTMLElement = document.getElementById('forgot-form')!;
+        const login: HTMLElement = document.getElementById('login-form')!;
+        const container: HTMLElement = document.getElementById('login-container')!;
+
+        forgot.style.visibility = 'hidden';
+        forgot.style.opacity = '0';
+
+        login.style.visibility ='visible';
+        login.style.opacity = '1';
+
+        container.style.height = '315px';
+
+    }
+    forgotPassword = () => {
+        const forgot: HTMLElement = document.getElementById('forgot-form')!;
+        const login: HTMLElement = document.getElementById('login-form')!;
+        const container: HTMLElement = document.getElementById('login-container')!;
+
+        forgot.style.visibility = 'visible';
+        forgot.style.opacity = '1';
+
+        login.style.visibility = 'hidden';
+        login.style.opacity = '0';
+
+        container.style.height = '250px'
+    }
+
 
     render() {
         return (
@@ -81,7 +114,8 @@ export default class Login extends Component<Props, State> {
                         <input
                             type='text'
                             id='login-input'
-                            placeholder='Username'
+                            placeholder='Email'
+                            required={true}
                             onChange={this.onUsernameChange}
                         />
                         <br /> <br />
@@ -89,6 +123,7 @@ export default class Login extends Component<Props, State> {
                             type='password'
                             id="login-input"
                             placeholder='Password'
+                            required={true}
                             onChange={this.onPasswordChange}
                         />
                         <br /> <br />
@@ -104,9 +139,17 @@ export default class Login extends Component<Props, State> {
                         <footer
                             id='login-footer'
                         >
-                            <a onClick={this.register}>Register </a>
+                            <a
+                                id='login-hover'
+                                onClick={this.register}
+                            >
+                                Register
+                            </a>
                             <span>| </span>
-                            <a href='#'>Forgot Password</a>
+                            <a
+                                id='login-hover'
+                                onClick={this.forgotPassword}
+                            >Forgot Password</a>
                         </footer>
                     </form>
 
@@ -115,18 +158,22 @@ export default class Login extends Component<Props, State> {
                             type='text'
                             id='login-input'
                             placeholder='Email'
+                            required={true}
                         />
                         <br /> <br />
                         <input
                             type='password'
                             id='login-input'
                             placeholder='Password'
+                            required={true}
                         />
                         <br /> <br />
                         <input
                             type='password'
                             id='login-input'
                             placeholder='Confirm Password'
+                            required={true}
+
                         />
                         <br /> <br />
                         <button
@@ -135,15 +182,42 @@ export default class Login extends Component<Props, State> {
                         >
                             <span>Register</span>
                         </button>
-                        <br/><br/>
+                        <br /><br />
                         <button
                             id='login-button'
-                            onClick={this.backToLogin}
+                            onClick={this.backToLoginFromRegister}
+                            type='button'
                         >
                             Back to Login
                         </button>
                     </form>
 
+                    <form
+                        id='forgot-form'
+                    >
+                        <input
+                            type='email'
+                            id='login-input'
+                            required={true}
+                            placeholder="Email"
+                        />
+                        <br /> <br />
+                        <button
+                            type='submit'
+                            id='login-button'
+                        >
+                            <span>Continue</span>
+                        </button>
+                        <br/> <br/>
+                        <button
+                            type='button'
+                            id='login-button'
+                            onClick={this.backToLoginFromForgot}
+                        >
+                            Back to Login
+                        </button>
+
+                    </form>
                 </div>
             </body>
         )

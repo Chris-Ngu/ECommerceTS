@@ -46,8 +46,7 @@ code {
   border-radius: 10px;
 
   box-shadow: 10px 10px rgb(64,64,64);
-  transition: padding-bottom 0.1s linear;
-  
+  transition: padding-bottom 0.3s linear, height 0.3s linear;
 
   #login-input {
     width: 90%;
@@ -130,8 +129,23 @@ code {
   opacity: 0;
   transition: visibility 0.3s linear, opacity 0.3s linear;
 }
+#forgot-form {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  margin-bottom: 20px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
 #login-form {
   visibility: visible;
   opacity: 1;
   transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+#login-hover:hover{
+  cursor: pointer;
 }
