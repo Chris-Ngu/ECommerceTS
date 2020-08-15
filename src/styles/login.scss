@@ -1,26 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-
 $roboto-condensed: 'Roboto Condensed';
 $blink-color: rgb(51,204,255);
-// React Prefab CSS
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-// --------------------------------------------------------------------------------------------------- 
-
-// Login Page
 
 #background {
   height: 100vh;
@@ -41,7 +21,8 @@ code {
   border-radius: 10px;
 
   box-shadow: 10px 10px rgb(64,64,64);
-  transition: padding-bottom 0.3s linear, height 0.3s linear;
+  transition: 0.3s linear;
+  //transition: padding-bottom 0.3s linear, height 0.3s linear;
 
   #login-header {
     display: inline-flex;

@@ -1,28 +1,15 @@
-/*
-    Test input binds
-    work on 'onSubmit for login and register
-    add mysql backend
-
-*/
+// NPM
 import React, { Component } from 'react';
 
-interface Props {
+// Styles
+import '../styles/login.scss';
 
-}
+// Interface
+import { ILoginProps, ILoginState } from '../interfaces/ILogin';
 
-interface State {
-    loginEmail: string;
-    loginPassword: string;
 
-    registerEmail: string;
-    registerPassword: string;
-    registerConfirmPassword: string;
-
-    forgotEmail: string;
-}
-
-export default class Login extends Component<Props, State> {
-    constructor(props: Props) {
+export default class Login extends Component<ILoginProps, ILoginState> {
+    constructor(props: ILoginProps) {
         super(props);
 
         this.state = {

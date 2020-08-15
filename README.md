@@ -13,4 +13,6 @@
 ### Known Bugs
 
 ###### Login Screen
-* None so far :O
+* 'Forgot Password' animation catching on itself
+* Connect MySQL backend
+* Create registration queries (Create 3 submit functions or create just 1; also handle input, might be already done with component input validation)
