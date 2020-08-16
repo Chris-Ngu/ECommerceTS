@@ -16,22 +16,33 @@ $blink-color: rgb(51,204,255);
         border-radius: 20px;
         padding: 30px;
         width: 300px;
+        box-shadow: 10px 10px rgb(64, 64, 64);
+        border: 1px solid black;
 
         #image-container { 
             text-align: center;
+
+            #fourohfour-logo {
+                width: 100px;
+            }
         }
 
-        #fourohfour-logo {
-            width: 200px;
-        }
+
 
         #fourohfour-error-message { 
             text-align: center;
             font-family: $roboto-condensed;
             font-size: 20px;
+            font-weight: 600;
+
+            animation: colorPop 3s infinite;
+            @keyframes colorPop {
+                0%	    { color: black;}
+                50%     { color: rgb(51,204,255);}
+                70%     { color: rgb(51,204,255);}
+                100%    { color: black;}
+            }
         }
+
     }
 }
-/*
-
-*/
