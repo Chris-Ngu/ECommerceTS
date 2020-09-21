@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+$roboto-condensed: 'Roboto Condensed';
+$blink-color: rgb(51,204,255);
+
+.hero-image {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.4)), 
+        url("../images/ren.gif");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: cover;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+.landing-header {
+    display: flex;
+}
+.landing-subtitle {
+    margin-top: -20px;
+}
+.landing-button {
+    background-color: white;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: $roboto-condensed;
+    font-size: 17px;
+    outline: none;
+    border: none;
+}
+.landing-button:hover {
+    transition: 0.5s linear; 
+    color:$blink-color;
+    cursor: grab;
+}

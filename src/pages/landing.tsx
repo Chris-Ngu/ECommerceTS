@@ -1,25 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
+import '../styles/landing.scss';
 
-interface Props {
+const Landing: React.FC<{}> = ({ }) => {
+    return (
+        <div className="landingContainer">
+            <div className="hero-image">
+                <div className="hero-text">
+                    <h1 style={{color: "rgb(51, 204, 255)"}}>
+                        Welcome to KeebClack!
+                    </h1>
+                    <h2 className="landing-subtitle">
+                        The keyboard market for all
+                    </h2>
+                    <button className="landing-button">
+                        click me
+                    </button>
+                </div>
+            </div >
 
+
+        </div >
+    )
 }
 
-interface State {
-
-}
-
-export default class Landing extends Component<Props, State> {
-    constructor(props: Props){
-        super(props);
-
-        //set State and binding here
-    }
-
-    render() {
-        return(
-            <div>
-                <h1>Landing page here</h1>
-            </div>
-        )
-    }
-}
+export default Landing;

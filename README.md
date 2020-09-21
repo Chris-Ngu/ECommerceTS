@@ -1,20 +1,16 @@
-# Blink
+# KeebClask
 
 ### Technologies
 * PostgreSQL
-* Express
+* ASP.NET CORE
 * React
 * Node.TS (TypeScript)
 
 ### Demo
-![Login](https://user-images.githubusercontent.com/57853013/90316646-12a87e80-dee9-11ea-908b-96cb5991f5ce.gif)
-
-![404](https://user-images.githubusercontent.com/57853013/90340201-1eb14080-dfbc-11ea-9775-f53e2cd801af.gif)
-
 
 ### Known Bugs
 ###### Internal Tech/ Structure
-* Connect PostgreSQL backend from Heroku
+* Change headers to new proj title
 
 ###### Login Screen
 * 'Forgot Password' animation catching on itself
