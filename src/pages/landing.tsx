@@ -4,20 +4,57 @@ import '../styles/landing.scss';
 const Landing: React.FC<{}> = ({ }) => {
     return (
         <div className="landingContainer">
+
             <div className="hero-image">
+                <button className="landing-signin">
+                    Sign in
+                </button>
                 <div className="hero-text">
-                    <h1 style={{color: "rgb(51, 204, 255)"}}>
+                    <h1 style={{ color: "rgb(51, 204, 255)", fontSize: 60 }}>
                         Welcome to KeebClack!
                     </h1>
                     <h2 className="landing-subtitle">
                         The keyboard market for all
                     </h2>
+                    <hr />
                     <button className="landing-button">
-                        click me
+                        Main page
                     </button>
                 </div>
             </div >
 
+            <div className="landing-information">
+                <div>
+                    <button className="land-info-banner">
+                        <img src={require('../images/duty-free.png')} alt="marketplace" />
+                        <h4>Moderated Marketplace</h4>
+                        <hr />
+
+                        <p>hello</p>
+                    </button>
+                </div>
+                <div>
+                    <button className="land-info-banner">
+                        <img src={require('../images/conversation.png')} alt="community" />
+                        <h4>Universal Community</h4>
+                        <hr />
+
+                        <p>hello</p>
+                    </button>
+                </div>
+                <div>
+                    <button className="land-info-banner">
+                        <img src={require('../images/toggle.png')} alt="toggle" />
+                        <h4>Endless options</h4>
+                        <hr />
+                        <p>hello</p>
+                    </button>
+                </div>
+            </div>
+
+            <footer>
+                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            </footer>
 
         </div >
     )
