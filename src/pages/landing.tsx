@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/landing.scss';
 
 
 
 const Landing: React.FC<{}> = ({ }) => {
+    const [panel, panelCount] = useState(0);
+
     const info = (choice: number) => {
 
         if (choice === 0) {
             return (
                 <>
                     <h1>Buy and sell with confidence!</h1>
+                    <div className="landing-moderated-panel">
+                        <div>
+                            <p>
+                                KeebClack is a centralized and organized
+                                selling platform.
+                            </p>
+                            <p>
+                                Long gone are the r/mechmarket
+                                days. Buy with confidence: all your purchases are covered
+                                by a 30 day warrenty!
+                            </p>
+
+                        </div>
+                        <div>
+                            <img
+                                src={require('../images/security.png')}
+                            />
+                        </div>
+                    </div>
 
                 </>
             )
@@ -51,34 +72,39 @@ const Landing: React.FC<{}> = ({ }) => {
 
             <div className="landing-information">
                 <div>
-                    <button className="land-info-banner">
+                    <button
+                        className="land-info-banner"
+                        onClick={() => panelCount(0)}
+                    >
                         <img src={require('../images/duty-free.png')} alt="marketplace" />
                         <h4>Moderated Marketplace</h4>
                         <hr />
-                        <hr className="landing-checked" />
                     </button>
                 </div>
                 <div>
-                    <button className="land-info-banner" >
+                    <button
+                        className="land-info-banner"
+                        onClick={() => panelCount(1)}
+                    >
                         <img src={require('../images/conversation.png')} alt="community" />
                         <h4>Universal Community</h4>
                         <hr />
-                        <hr className="landing-checked" />
                     </button>
                 </div>
                 <div>
-                    <button className="land-info-banner" >
+                    <button
+                        className="land-info-banner"
+                        onClick={() => panelCount(2)}
+                    >
                         <img src={require('../images/toggle.png')} alt="toggle" />
                         <h4>Endless options</h4>
                         <hr />
-                        <hr className="landing-checked" />
                     </button>
                 </div>
             </div>
-            <hr style={{ backgroundColor: "gray", height: '10px', marginTop: '0px' }} />
             <div className="landing-panel">
                 {
-                    info(0)
+                    info(panel)
                 }
             </div>
 

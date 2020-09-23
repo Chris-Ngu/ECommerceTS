@@ -64,10 +64,10 @@ $blink-color: rgb(51,204,255);
     grid-template-areas: "marketplace community options";
     grid-template-rows: 1fr 1fr 1fr;
     height: 320px;
-    background-color: gray;
+    background-image: linear-gradient(rgb(152, 152, 152), black);
 }
 .land-info-banner {
-    background-color: gray;
+    background-color: transparent;
     outline: none;
     border: none;
     margin-left: 25%;
@@ -82,11 +82,7 @@ $blink-color: rgb(51,204,255);
         height: 120px;
     }
 }
-.landing-checked {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-}
+
 .land-info-banner:hover {
     cursor: grab;
     margin-top: 20px;
@@ -95,5 +91,23 @@ $blink-color: rgb(51,204,255);
 .landing-panel {
     padding: 10px;
     text-align: center;
-    background-color: rgb(152, 152, 152);
+    background-color: black;
+}
+
+.landing-moderated-panel {
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    display: flex;
+
+    img {
+        width: 250px;
+        height: 250px;
+        margin-left: 100px;
+    
+    }
+    p {
+        color: white;
+        font-size: 25px;
+    }
 }
