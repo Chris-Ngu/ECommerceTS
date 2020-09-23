@@ -4,7 +4,7 @@ $blink-color: rgb(51,204,255);
 
 .hero-image {
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.65), 
+        rgba(0, 0, 0, 0.75), 
         rgba(0, 0, 0, 0.4)), 
         url("../images/keycon.jpg");
     height: 100vh;
@@ -49,6 +49,7 @@ $blink-color: rgb(51,204,255);
     outline: none;
     border: none;
     margin-top: 10px;
+    transition: 0.5s ease-out
 }
 .landing-button:hover {
     transition: 0.5s linear; 
@@ -62,8 +63,7 @@ $blink-color: rgb(51,204,255);
     display: grid;
     grid-template-areas: "marketplace community options";
     grid-template-rows: 1fr 1fr 1fr;
-    height: 400px;
-
+    height: 320px;
     background-color: gray;
 }
 .land-info-banner {
@@ -71,7 +71,10 @@ $blink-color: rgb(51,204,255);
     outline: none;
     border: none;
     margin-left: 25%;
-    color: rgb(185, 185, 185);
+    margin-top: 50px;
+    color: white;
+    transition: margin 0.5s ease-out;
+
 
     img {
         margin-top: 20px;
@@ -79,7 +82,18 @@ $blink-color: rgb(51,204,255);
         height: 120px;
     }
 }
+.landing-checked {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
 .land-info-banner:hover {
     cursor: grab;
-    color: white;
+    margin-top: 20px;
+}
+
+.landing-panel {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(152, 152, 152);
 }

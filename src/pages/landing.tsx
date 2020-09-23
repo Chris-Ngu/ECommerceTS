@@ -1,7 +1,33 @@
 import React from 'react';
 import '../styles/landing.scss';
 
+
+
 const Landing: React.FC<{}> = ({ }) => {
+    const info = (choice: number) => {
+
+        if (choice === 0) {
+            return (
+                <>
+                    <h1>Buy and sell with confidence!</h1>
+
+                </>
+            )
+        } else if (choice === 1) {
+            return (
+                <>
+                    <h1>This is community</h1>
+                </>
+            )
+        } else if (choice === 2) {
+            return (
+                <>
+                    <h1>This is options</h1>
+                </>
+            )
+        }
+    }
+
     return (
         <div className="landingContainer">
 
@@ -29,27 +55,31 @@ const Landing: React.FC<{}> = ({ }) => {
                         <img src={require('../images/duty-free.png')} alt="marketplace" />
                         <h4>Moderated Marketplace</h4>
                         <hr />
-
-                        <p>hello</p>
+                        <hr className="landing-checked" />
                     </button>
                 </div>
                 <div>
-                    <button className="land-info-banner">
+                    <button className="land-info-banner" >
                         <img src={require('../images/conversation.png')} alt="community" />
                         <h4>Universal Community</h4>
                         <hr />
-
-                        <p>hello</p>
+                        <hr className="landing-checked" />
                     </button>
                 </div>
                 <div>
-                    <button className="land-info-banner">
+                    <button className="land-info-banner" >
                         <img src={require('../images/toggle.png')} alt="toggle" />
                         <h4>Endless options</h4>
                         <hr />
-                        <p>hello</p>
+                        <hr className="landing-checked" />
                     </button>
                 </div>
+            </div>
+            <hr style={{ backgroundColor: "gray", height: '10px', marginTop: '0px' }} />
+            <div className="landing-panel">
+                {
+                    info(0)
+                }
             </div>
 
             <footer>
