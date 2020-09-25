@@ -10,14 +10,15 @@ const fourohfour: React.FC = () => {
                 <div id="image-container">
                     <a href='/'>
                         <img id='fourohfour-logo'
-                            src={require('../images/logo.png')}>
-                        </img>
+                            src={require('../images/logo.png')}
+                            alt='logo'
+                        />
                     </a>
                 </div>
 
                 <p id='fourohfour-error-message'>
                     HTTP ERROR: 404
-                    <hr/>
+                    <hr />
                     We couldn't find that page in our scrapbook...
                 </p>
 
