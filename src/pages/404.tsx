@@ -19,7 +19,7 @@ const fourohfour: React.FC = () => {
                 <p id='fourohfour-error-message'>
                     HTTP ERROR: 404
                     <hr />
-                    We couldn't find that page in our scrapbook...
+                    That page does not exist
                 </p>
 
             </div>

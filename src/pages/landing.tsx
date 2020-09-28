@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/landing.scss';
 
-
-
 const Landing: React.FC = () => {
     const [panel, panelCount] = useState(0);
 
@@ -93,8 +91,12 @@ const Landing: React.FC = () => {
         <div className="landingContainer">
 
             <div className="hero-image">
-                <button className="landing-signin">
-                    Sign in
+                <button
+                    className="landing-signin"
+                >
+                    <a href="/login">
+                        Sign in
+                    </a>
                 </button>
                 <div className="hero-text">
                     <h1 style={{ color: "rgb(51, 204, 255)", fontSize: 60 }}>
@@ -105,7 +107,9 @@ const Landing: React.FC = () => {
                     </h2>
                     <hr />
                     <button className="landing-button">
-                        Main page
+                        <a href="/menu">
+                            Main page
+                        </a>
                     </button>
                 </div>
             </div >
@@ -162,7 +166,7 @@ const Landing: React.FC = () => {
                     <a href='#'>Cookies preferences</a>
                 </div>
             </footer>
-            
+
             Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </div >
     )

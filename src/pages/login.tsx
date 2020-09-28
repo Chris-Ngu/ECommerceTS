@@ -1,84 +1,18 @@
 // NPM
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 // Styles
 import '../styles/login.scss';
 
-// Interface
-import { ILoginProps, ILoginState } from '../interfaces/ILogin';
+const Login: React.FC = () => {
+    const [loginEmail, onLogimEmailChange] = useState('');
+    const [loginPassword, onLoginPasswordChange] = useState('');
+    const [registerEmail, onRegisterEmailChange] = useState('');
+    const [registerPassword, onRegisterPasswordChange] = useState('');
+    const [registerConfirmPassword, onRegisterConfirmPasswordChange] = useState('');
+    const [forgotEmail, onForgotEmailChange] = useState('');
 
-
-export default class Login extends Component<ILoginProps, ILoginState> {
-    constructor(props: ILoginProps) {
-        super(props);
-
-        this.state = {
-            loginEmail: '',
-            loginPassword: '',
-
-            registerEmail: '',
-            registerPassword: '',
-            registerConfirmPassword: '',
-
-            forgotEmail: ''
-        };
-
-        this.onLoginEmailChange = this.onLoginEmailChange.bind(this);
-        this.onLoginPasswordChange = this.onLoginPasswordChange.bind(this);
-
-        this.onRegisterEmailChange = this.onRegisterEmailChange.bind(this);
-        this.onRegisterPasswordChange = this.onRegisterPasswordChange.bind(this);
-        this.onRegisterConfirmChange = this.onRegisterConfirmChange.bind(this);
-
-        this.onForgotEmailChange = this.onForgotEmailChange.bind(this);
-
-        this.register = this.register.bind(this);
-        this.forgotPassword = this.forgotPassword.bind(this);
-        this.backToLoginFromRegister = this.backToLoginFromRegister.bind(this);
-        this.backToLoginFromForgot = this.backToLoginFromForgot.bind(this);
-    }
-
-    onLoginEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            loginEmail: e.target.value
-        });
-    }
-
-    onLoginPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            loginPassword: e.target.value
-        });
-    }
-
-    onRegisterEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            registerEmail: e.target.value
-        });
-    }
-
-    onRegisterPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            registerEmail: e.target.value
-        });
-    }
-
-    onRegisterConfirmChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            registerConfirmPassword: e.target.value
-        });
-    }
-
-    onForgotEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            forgotEmail: e.target.value
-        });
-    }
-
-    onSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
-
-    }
-    register = () => {
+    const registerAnimate = () => {
         const login: HTMLElement = document.getElementById('login-form')!;
         const register: HTMLElement = document.getElementById('register-form')!;
         const container: HTMLElement = document.getElementById('login-container')!;
@@ -91,7 +25,7 @@ export default class Login extends Component<ILoginProps, ILoginState> {
 
         container.style.paddingBottom = '60px';
     }
-    backToLoginFromRegister = () => {
+    const backToLoginFromRegisterAnimate = () => {
         const login: HTMLElement = document.getElementById('login-form')!;
         const register: HTMLElement = document.getElementById('register-form')!;
         const container: HTMLElement = document.getElementById('login-container')!;
@@ -104,7 +38,7 @@ export default class Login extends Component<ILoginProps, ILoginState> {
 
         container.style.paddingBottom = '0px';
     }
-    backToLoginFromForgot = () => {
+    const backToLoginFromForgot = () => {
         const forgot: HTMLElement = document.getElementById('forgot-form')!;
         const login: HTMLElement = document.getElementById('login-form')!;
         const container: HTMLElement = document.getElementById('login-container')!;
@@ -116,9 +50,8 @@ export default class Login extends Component<ILoginProps, ILoginState> {
         login.style.opacity = '1';
 
         container.style.height = '315px';
-
     }
-    forgotPassword = () => {
+    const forgotAnimate = () => {
         const forgot: HTMLElement = document.getElementById('forgot-form')!;
         const login: HTMLElement = document.getElementById('login-form')!;
         const container: HTMLElement = document.getElementById('login-container')!;
@@ -132,147 +65,147 @@ export default class Login extends Component<ILoginProps, ILoginState> {
         container.style.height = '250px'
     }
 
+    //handle form submits here
+    return (
+        <body
+            id='background'>
 
-    render() {
-        return (
-            <body
-                id='background'>
+            <div
+                id='login-container'>
 
-                <div
-                    id='login-container'>
-
-                    <header id='login-header'>
-                        <h1
-                            id="login-title"
-                        >
-                            Blink
-                        </h1>
-                        <img
-                            alt='Blink Logo'
-                            id='login-pic'
-                            src={require('../images/logo.png')}
-                        />
-                    </header>
-
-                    {/* LOGIN FORM */}
-                    <form id='login-form'>
-                        <input
-                            type='text'
-                            id='login-input'
-                            placeholder='Email'
-                            required={true}
-                            onChange={this.onLoginEmailChange}
-                        />
-                        <br /> <br />
-                        <input
-                            type='password'
-                            id="login-input"
-                            placeholder='Password'
-                            required={true}
-                            onChange={this.onLoginPasswordChange}
-                        />
-                        <br /> <br />
-                        <button
-                            type='submit'
-                            id="login-button"
-                        >
-                            <span>Login</span>
-                        </button>
-                        <br /> <br />
-                        <hr style={{ width: '70%', backgroundColor: 'rgb(51,204,255' }} />
-
-                        <footer
-                            id='login-footer'
-                        >
-                            <a
-                                href='#register'
-                                id='login-hover'
-                                onClick={this.register}
-                            >
-                                Register
-                            </a>
-                            <span>| </span>
-                            <a
-                                href="#forgot"
-                                id='login-hover'
-                                onClick={this.forgotPassword}
-                            >Forgot Password</a>
-                        </footer>
-                    </form>
-
-                    {/*REGISTER FORM */}
-                    <form id='register-form'>
-                        <input
-                            type='text'
-                            id='login-input'
-                            placeholder='Email'
-                            required={true}
-                            onChange={this.onRegisterEmailChange}
-                        />
-                        <br /> <br />
-                        <input
-                            type='password'
-                            id='login-input'
-                            placeholder='Password'
-                            required={true}
-                            onChange={this.onRegisterPasswordChange}
-                        />
-                        <br /> <br />
-                        <input
-                            type='password'
-                            id='login-input'
-                            placeholder='Confirm Password'
-                            required={true}
-                            onChange={this.onRegisterConfirmChange}
-
-                        />
-                        <br /> <br />
-                        <button
-                            type='submit'
-                            id='login-button'
-                        >
-                            <span>Register</span>
-                        </button>
-                        <br /><br />
-                        <button
-                            id='login-button'
-                            onClick={this.backToLoginFromRegister}
-                            type='button'
-                        >
-                            Back to Login
-                        </button>
-                    </form>
-
-                    {/*FORGOT FORM */}
-                    <form
-                        id='forgot-form'
+                <header id='login-header'>
+                    <h1
+                        id="login-title"
                     >
-                        <input
-                            type='email'
-                            id='login-input'
-                            required={true}
-                            placeholder="Email"
-                            onChange={this.onForgotEmailChange}
-                        />
-                        <br /> <br />
-                        <button
-                            type='submit'
-                            id='login-button'
-                        >
-                            <span>Continue</span>
-                        </button>
-                        <br /> <br />
-                        <button
-                            type='button'
-                            id='login-button'
-                            onClick={this.backToLoginFromForgot}
-                        >
-                            Back to Login
-                        </button>
+                        KeebClack
+                            </h1>
+                    <img
+                        alt='Blink Logo'
+                        id='login-pic'
+                        src={require('../images/logo.png')}
+                    />
+                </header>
 
-                    </form>
-                </div>
-            </body>
-        )
-    }
+                {/* LOGIN FORM */}
+                <form id='login-form'>
+                    <input
+                        type='text'
+                        id='login-input'
+                        placeholder='Email'
+                        required={true}
+                        onChange={(e) => onLogimEmailChange(loginEmail + e.target.value)}
+                    />
+                    <br /> <br />
+                    <input
+                        type='password'
+                        id="login-input"
+                        placeholder='Password'
+                        required={true}
+                        onChange={(e) => onLoginPasswordChange(loginPassword + e.target.value)}
+                    />
+                    <br /> <br />
+                    <button
+                        type='submit'
+                        id="login-button"
+                    >
+                        <span>Login</span>
+                    </button>
+                    <br /> <br />
+                    <hr style={{ width: '70%', backgroundColor: 'rgb(51,204,255' }} />
+
+                    <footer
+                        id='login-footer'
+                    >
+                        <a
+                            href='#register'
+                            id='login-hover'
+                            onClick={registerAnimate}
+                        >
+                            Register
+                                </a>
+                        <span>| </span>
+                        <a
+                            href="#forgot"
+                            id='login-hover'
+                            onClick={forgotAnimate}
+                        >Forgot Password</a>
+                    </footer>
+                </form>
+
+                {/*REGISTER FORM */}
+                <form id='register-form'>
+                    <input
+                        type='text'
+                        id='login-input'
+                        placeholder='Email'
+                        required={true}
+                        onChange={(e) => onRegisterEmailChange(registerEmail + e.target.value)}
+                    />
+                    <br /> <br />
+                    <input
+                        type='password'
+                        id='login-input'
+                        placeholder='Password'
+                        required={true}
+                        onChange={(e) => onRegisterPasswordChange(registerPassword + e.target.value)}
+                    />
+                    <br /> <br />
+                    <input
+                        type='password'
+                        id='login-input'
+                        placeholder='Confirm Password'
+                        required={true}
+                        onChange={(e) => onRegisterConfirmPasswordChange(registerConfirmPassword + e.target.value)}
+
+                    />
+                    <br /> <br />
+                    <button
+                        type='submit'
+                        id='login-button'
+                    >
+                        <span>Register</span>
+                    </button>
+                    <br /><br />
+                    <button
+                        id='login-button'
+                        onClick={backToLoginFromRegisterAnimate}
+                        type='button'
+                    >
+                        Back to Login
+                            </button>
+                </form>
+
+                {/*FORGOT FORM */}
+                <form
+                    id='forgot-form'
+                >
+                    <input
+                        type='email'
+                        id='login-input'
+                        required={true}
+                        placeholder="Email"
+                        onChange={(e) => onForgotEmailChange(forgotEmail + e.target.value)}
+                    />
+                    <br /> <br />
+                    <button
+                        type='submit'
+                        id='login-button'
+                    >
+                        <span>Continue</span>
+                    </button>
+                    <br /> <br />
+                    <button
+                        type='button'
+                        id='login-button'
+                        onClick={backToLoginFromForgot}
+                    >
+                        Back to Login
+                            </button>
+
+                </form>
+            </div>
+        </body>
+    )
 }
+
+export default Login;
