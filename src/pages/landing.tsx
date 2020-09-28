@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../styles/landing.scss';
 
 const Landing: React.FC = () => {
     const [panel, panelCount] = useState(0);
+    let history = useHistory();
 
     const info = (choice: number) => {
 
@@ -93,10 +95,9 @@ const Landing: React.FC = () => {
             <div className="hero-image">
                 <button
                     className="landing-signin"
+                    onClick={() => history.push('/login')}
                 >
-                    <a href="/login">
-                        Sign in
-                    </a>
+                    Login
                 </button>
                 <div className="hero-text">
                     <h1 style={{ color: "rgb(51, 204, 255)", fontSize: 60 }}>
@@ -106,10 +107,11 @@ const Landing: React.FC = () => {
                         The keyboard market for all
                     </h2>
                     <hr />
-                    <button className="landing-button">
-                        <a href="/menu">
-                            Main page
-                        </a>
+                    <button
+                        className="landing-button"
+                        onClick={() => history.push('/menu')}
+                    >
+                            Main page   
                     </button>
                 </div>
             </div >

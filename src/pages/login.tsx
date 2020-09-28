@@ -3,7 +3,6 @@ import React, { Component, useState } from 'react';
 
 // Styles
 import '../styles/login.scss';
-
 const Login: React.FC = () => {
     const [loginEmail, onLogimEmailChange] = useState('');
     const [loginPassword, onLoginPasswordChange] = useState('');
@@ -78,9 +77,9 @@ const Login: React.FC = () => {
                         id="login-title"
                     >
                         KeebClack
-                            </h1>
+                    </h1>
                     <img
-                        alt='Blink Logo'
+                        alt='KeebClack Logo'
                         id='login-pic'
                         src={require('../images/logo.png')}
                     />
