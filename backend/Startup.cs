@@ -28,7 +28,12 @@ namespace backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<KeyboardContext>((opt) => opt.UseInMemoryDatabase("KeyboardList"));
+            services.AddSingleton<IKeyboardRepository, KeyboardRepository>();
+
+            services.AddMvc();
+            services.AddLogging();
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +43,7 @@ namespace backend
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
