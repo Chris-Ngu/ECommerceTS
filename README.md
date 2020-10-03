@@ -2,7 +2,7 @@
 
 ### Technologies
 * PostgreSQL
-* ASP.NET CORE
+* Express.TS
 * React
 * Node.TS (TypeScript)
 
