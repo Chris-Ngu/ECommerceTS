@@ -1,7 +1,7 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class Keyboard extends BaseEntity {
+export default class Keyboard extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 

@@ -1,12 +1,22 @@
-import Express from 'express';
+import Express, { Request, Response } from "express";
 
-const app = Express();
-const port: number = 3000;
+import Keyboard from "src/entities/Keyboard";
+import User from "src/entities/User";
+import Connection from "./src/Connection";
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+Connection.then((connection) => {
+  const userRepository = connection.getRepository(User);
+  const keyboardRepository = connection.getRepository(Keyboard);
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`)
-});
+  const app = Express().use(Express.json());
+  const port: number = 3000;
+
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`)
+  });
+
+  app.get("/", (req: Request, res: Response) => {
+    res.send("Hello world");
+  })
+})
+
