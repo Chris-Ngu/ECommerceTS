@@ -1,7 +1,3 @@
-/*
-  WORK ON CRUDING MODELS
-*/
-
 import Express, { Request, Response } from "express";
 
 import Keyboard from "src/entities/Keyboard";
@@ -46,6 +42,43 @@ Connection.then((connection) => {
   });
 
   // ---------      CREATE      ---------------------------
+  app.post("/users", async (req: Request, res: Response) => {
+    const user = await userRepository.create(req.body);
+    const results = await userRepository.save(user);
+    return res.send(results);
+  });
+
+  app.post("/keyboards", async (req: Request, res: Response) => {
+    const keyboard = await keyboardRepository.create(req.body);
+    const results = await keyboardRepository.save(keyboard);
+    return res.send(results);
+  });
+
+  // ---------      UPDATE SPECIFIC      ---------------------------
+  app.put("/user:id", async (req: Request, res: Response) => {
+    const user = await userRepository.findOne(req.params.id);
+    userRepository.merge(user, req.body);
+    const results = await userRepository.save(user);
+    return res.send(results);
+  });
+
+  app.put("/keyboards/:id", async (req: Request, res: Response) => {
+    const keyboard = await keyboardRepository.findOne(req.params.id);
+    keyboardRepository.merge(keyboard, req.body);
+    const results = await keyboardRepository.save(user);
+    return res.send(results);
+  });
+
+  // ---------      DELETE SPECIFIC      ---------------------------
+  app.delete("/users/:id", async (req: Request, res: Response) => {
+    const results = await userRepository.delete(req.params.id);
+    return res.send(results);
+  });
+
+  app.delete("/keyboards/:id", async (req: Request, res: Response) => {
+    const results = await keyboardRepository.delete(req.params.id);
+    return res.send(results);
+  });
 
 })
   .catch((error: unknown) => {
