@@ -6,6 +6,8 @@ import Login from './pages/login';
 import FourOhFour from './pages/404';
 import Menu from './pages/menu'
 
+import Market from './pages/Market';
+
 const App: React.FC = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ const App: React.FC = () => {
           <Route path='/' exact component={Landing} />
           <Route path='/login' exact component={Login} />
           <Route path='/menu' exact component={Menu} />
+          <Route path="/market" exact component={Market} />
           <Route component={FourOhFour} />
         </Switch>
       </BrowserRouter>

@@ -9,7 +9,7 @@ const Menu: React.FC = () => {
         <div className='menu-container'>
             <div className='menu-market-container'>
                 <button
-                    onClick={() => history.push('/')}
+                    onClick={() => history.push('/market')}
                 >
                     <img src={require('../images/duty-free.png')} alt="market" />
                     <h1>Market</h1>
