@@ -1,25 +1,26 @@
 import "../styles/components/Nav.scss";
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const Nav = () => {
+    const [searchQuery, changeSearchQuery] = useState("");
     return (
         <nav className="nav">
-            <li>
-                <a className="active" href="#whatever">
-                    Whatever
-                </a>
-            </li>
-            <li>
-                <a className="active" href="#whatever1">
-                    Whatever1
-                </a>
-            </li>
-            <li>
-                <a className="active" href="#whatever2">
-                    Whatever2
-                </a>
-            </li>
+            <a className="active" href="#">Home</a>
+            <a href="#">Browse</a>
+            <a href="#">Menu</a>
+            <form>
+                <input className="searchBar"
+                    onChange={(e) => changeSearchQuery(searchQuery + e.target.value)}
+                />
+                <button
+                    className="searchButton"
+                    type="submit"
+                />
+            </form>
+
+
+            <button className="nav-right">Menu</button>
         </nav >
     );
 }
