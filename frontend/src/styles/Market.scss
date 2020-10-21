@@ -1,0 +1,22 @@
+.market-container {
+    display: grid;
+    grid-template-areas: 
+    "advertise"
+    "shop-by"
+    "featured";
+    grid-template-rows: 400px 400px 400px;
+    height: 100vh;
+}
+
+.market-advertise{
+    grid-area: advertise;
+    border: 2px solid green;
+}
+.market-shop-by{
+    grid-area: shop-by;
+    border: 2px solid red;
+}
+.market-featured{
+    grid-area: featured;
+    border: 2px solid blue;
+}
