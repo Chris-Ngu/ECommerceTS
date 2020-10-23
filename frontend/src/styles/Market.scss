@@ -1,20 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+$roboto-condensed: 'Roboto Condensed';
+$blink-color: rgb(51,204,255);
+
 .market-container {
     display: grid;
     grid-template-areas: 
     "advertise"
     "shop-by"
     "featured";
-    grid-template-rows: 400px 400px 400px;
+    grid-template-rows: 400px 500px 400px;
     height: 100vh;
 }
 
 .market-advertise{
     grid-area: advertise;
     border: 2px solid green;
+    text-align: center;
 }
 .market-shop-by{
     grid-area: shop-by;
     border: 2px solid red;
+    display: flex;
+    
+    .market-sub{
+        border: 2px solid purple;
+        width: 50%;
+        text-align: center;
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 15px;
+        }
+        p{
+            font-family: $roboto-condensed;
+            font-size: 20px;
+        }
+    }
+
 }
 .market-featured{
     grid-area: featured;

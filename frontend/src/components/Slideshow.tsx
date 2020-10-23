@@ -13,7 +13,7 @@ const Slideshow = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={require("../images/fuji.jpg")}
+                    src={require("../images/fuji_resized.jpg")}
                     alt="First slide"
                 />
                 <Carousel.Caption>
@@ -24,7 +24,7 @@ const Slideshow = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={require("../images/fuji.jpg")}
+                    src={require("../images/fuji_resized.jpg")}
                     alt="Second slide"
                 />
 
@@ -36,7 +36,7 @@ const Slideshow = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={require("../images/fuji.jpg")}
+                    src={require("../images/fuji_resized.jpg")}
                     alt="Third slide"
                 />
 
