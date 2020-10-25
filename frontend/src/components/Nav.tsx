@@ -1,28 +1,71 @@
 import "../styles/components/Nav.scss";
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Button, Form, FormControl, Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
-
-const Nav = () => {
+const NavigationBar = () => {
+    const history = useHistory();
     const [searchQuery, changeSearchQuery] = useState("");
+
+    const handleSubmit = () => {
+        alert("Search query: " + searchQuery);
+    }
+
     return (
-        <nav className="nav">
-            <a className="active" href="#">Home</a>
-            <a href="#">Browse</a>
-            <a href="#">Menu</a>
-            <form>
-                <input className="searchBar"
-                    onChange={(e) => changeSearchQuery(searchQuery + e.target.value)}
-                />
-                <button
-                    className="searchButton"
-                    type="submit"
-                />
-            </form>
+        <Navbar
+            bg="dark"
+            expand="lg"
+            variant="dark"
+        >
+            <Navbar.Brand
+                href="/menu">
+                KeebClack
+            </Navbar.Brand>
 
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <NavDropdown title="Home" id="basic-nav-dropdown">
+                        <NavDropdown.Item 
+                        href="#">Keyboard Guide</NavDropdown.Item>
+                        <NavDropdown.Item href="#">Why Mechanical</NavDropdown.Item>
+                        <NavDropdown.Item href="#">Collaboration</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#">About us</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link href="#">Shop</Nav.Link>
+                    <Nav.Link href="#">Learn</Nav.Link>
+                    <Nav.Link href="#">Updates/ stock</Nav.Link>
+                </Nav
+                >
+                <Form
+                    inline
+                    onSubmit={() => handleSubmit()}
+                >
+                    <FormControl
+                        type="text"
+                        placeholder="Search"
+                        className="mr-sm-2"
+                        onChange={(e) => changeSearchQuery(e.target.value)}
+                    />
+                    <Button
+                        type="submit"
+                        variant="outline-success"
+                    >
+                        Search
+                        </Button>
+                </Form>
 
-            <button className="nav-right">Menu</button>
-        </nav >
+                <Button
+                    onClick={() => history.push("/login")}
+
+                >
+                    Login
+                </Button>
+
+            </Navbar.Collapse>
+        </Navbar>
     );
 }
 
-export default Nav;
+export default NavigationBar;
