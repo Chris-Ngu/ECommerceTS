@@ -7,6 +7,7 @@ import FourOhFour from './pages/404';
 import Menu from './pages/menu'
 
 import Market from './pages/Market';
+import Shop from './pages/Shop';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path='/login' exact component={Login} />
           <Route path='/menu' exact component={Menu} />
           <Route path="/market" exact component={Market} />
+          <Route path="/market/shop" exact component={Shop} />
           <Route component={FourOhFour} />
         </Switch>
       </BrowserRouter>

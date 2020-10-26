@@ -1,4 +1,3 @@
-import "../styles/components/Nav.scss";
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, FormControl, Navbar, NavDropdown, Nav } from 'react-bootstrap';
@@ -10,15 +9,16 @@ const NavigationBar = () => {
     const handleSubmit = () => {
         alert("Search query: " + searchQuery);
     }
-
+    
     return (
+        
         <Navbar
             bg="dark"
             expand="lg"
             variant="dark"
         >
             <Navbar.Brand
-                href="/menu">
+                href="/market">
                 KeebClack
             </Navbar.Brand>
 
@@ -26,16 +26,15 @@ const NavigationBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown title="Home" id="basic-nav-dropdown">
-                        <NavDropdown.Item 
-                        href="#">Keyboard Guide</NavDropdown.Item>
+                        <NavDropdown.Item href="#">Keyboard Guide</NavDropdown.Item>
                         <NavDropdown.Item href="#">Why Mechanical</NavDropdown.Item>
                         <NavDropdown.Item href="#">Collaboration</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#">About us</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#">Shop</Nav.Link>
-                    <Nav.Link href="#">Learn</Nav.Link>
-                    <Nav.Link href="#">Updates/ stock</Nav.Link>
+                    <Nav.Link href="/market/shop">Shop</Nav.Link>
+                    <Nav.Link href="/market/learn">Learn</Nav.Link>
+                    <Nav.Link href="/market/updates">Updates/ stock</Nav.Link>
                 </Nav
                 >
                 <Form
@@ -62,6 +61,12 @@ const NavigationBar = () => {
                 >
                     Login
                 </Button>
+
+                <Nav.Link
+                    href="/menu"
+                >
+                    Menu
+                </Nav.Link>
 
             </Navbar.Collapse>
         </Navbar>
