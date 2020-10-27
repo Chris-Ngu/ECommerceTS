@@ -26,11 +26,11 @@ const NavigationBar = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown title="Home" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#">Keyboard Guide</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Why Mechanical</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Collaboration</NavDropdown.Item>
+                        <NavDropdown.Item href="/market/guide">Keyboard Guide</NavDropdown.Item>
+                        <NavDropdown.Item href="/market/why">Why Mechanical</NavDropdown.Item>
+                        <NavDropdown.Item href="/market/collaboration">Collaboration</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#">About us</NavDropdown.Item>
+                        <NavDropdown.Item href="/market/about">About us</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="/market/shop">Shop</Nav.Link>
                     <Nav.Link href="/market/learn">Learn</Nav.Link>
