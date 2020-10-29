@@ -112,22 +112,37 @@ const Market = () => {
                         </Button>
                     </Container>
                 </div>
-                <div className="market-featured">
-                    <div>
-                        <p>Featured Media</p>
-                        <Image
-                            src={require("../images/ren.gif")}
-                            fluid
-                            rounded
-                            alt="Featured Media"
-                        />
+                <div className="featured-3">
+                    <div className="market-featured">
+                        <div className="market-media-container">
+                            <h4>Featured Media</h4>
+                            <Image
+                                src={require("../images/ren.gif")}
+                                fluid
+                                rounded
+                                alt="Featured Media"
+                            />
 
-                    </div>
-                    <div>
-                        Featured Article
-                    </div>
-                    <div>
-                        Featured Poll
+                        </div>
+                        <div className="market-featured-container">
+                            <h4>Featured Article</h4>
+                            <div className="market-featured-article">
+                                <h6>Lorep Placeholder</h6>
+                                <p>Lorep Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep
+                                Lorep Lorep Lorep Lorep Lorep Lorep
+                                </p>
+                            </div>
+                        </div>
+                        <div className="market-poll-container">
+                            Featured Poll
+                        </div>
                     </div>
                 </div>
             </div>

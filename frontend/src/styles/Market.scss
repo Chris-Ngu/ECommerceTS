@@ -48,4 +48,29 @@ $blink-color: rgb(51,204,255);
     grid-area: featured;
     text-align: center;
     background-color: rgb(240,240,240);
+    grid-template-areas: "media article poll";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.market-media-container{
+    grid-area:"media"
+}
+.market-featured-container{
+    grid-area: "article";
+    margin-top: 20px;
+}
+.market-poll-container{
+    grid-area: "market-poll-container";
+}
+
+.market-featured-article{
+    width: 500px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.featured-3{
+    display:inline-block;
 }

@@ -9,6 +9,7 @@ const Menu: React.FC = () => {
         <div className='menu-container'>
             <div className='menu-market-container'>
                 <button
+                    className="menu-button"
                     onClick={() => history.push('/market')}
                 >
                     <img src={require('../images/duty-free.png')} alt="market" />
@@ -17,6 +18,7 @@ const Menu: React.FC = () => {
             </div>
             <div className='menu-community-container'>
                 <button
+                    className="menu-button"
                     onClick={() => alert('Coming soon, stay tuned!')}
                 >
                     <img src={require("../images/conversation.png")} alt="community" />
@@ -26,6 +28,7 @@ const Menu: React.FC = () => {
             </div>
             <div className='menu-applications-container'>
                 <button
+                    className="menu-button"
                     onClick={() => alert('Coming soon, stay tuned!')}>
                     <img src={require("../images/podcast.png")} alt="applications" />
                     <h1>Applications</h1>

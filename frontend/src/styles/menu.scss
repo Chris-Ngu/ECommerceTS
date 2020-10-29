@@ -3,14 +3,15 @@
     display: grid;
     grid-template-areas: 'market community applications';
     grid-column: 1fr 1fr 1fr;
+}
 
-    button {
-        border: none;
-        background-color: transparent;
-        transition: .5s linear;
-        border-radius: 10%;
-        padding: 15px;
-    }
+.menu-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: .5s linear;
+    border-radius: 10%;
+    padding: 15px;
 }
 
 .menu-container button:hover {
