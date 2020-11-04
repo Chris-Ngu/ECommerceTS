@@ -1,9 +1,11 @@
 import "../styles/components/BoardListing.scss";
 
 import React from "react";
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 
 type ListingRequirements = {
+    id: number
     listingTitle: string
     photoLink: string
     price: number
@@ -11,6 +13,7 @@ type ListingRequirements = {
 }
 
 const BoardListing = (props: ListingRequirements) => {
+    const history = useHistory();
     return (
         <div className="boardlisting-container">
             <Image
@@ -22,6 +25,14 @@ const BoardListing = (props: ListingRequirements) => {
             <h4>{props.listingTitle}</h4>
             <p className="boardlisting-date">{props.datePosted}</p>
             <p className="boardlisting-price">${props.price}</p>
+            <p className="boardlisting-id">id: {props.id}</p>
+            <Button
+                onClick={() => {
+                    history.push("/market/shop/" + props.id)
+                }}
+            >
+                More details
+            </Button>
         </div >
     )
 }

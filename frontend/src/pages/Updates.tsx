@@ -12,12 +12,14 @@ const Updates = () => {
             listingTitle: "1 title",
             photoLink: "1 link",
             price: 1,
-            datePosted: "1 date"
+            datePosted: "1 date",
+            id: 666
         }, {
             listingTitle: "2 title",
             photoLink: "2 link",
             price: 2,
-            datePosted: "2 date"
+            datePosted: "2 date",
+            id: 666
         },
     ]
 
@@ -29,18 +31,21 @@ const Updates = () => {
             <div className="updates-container">
                 <h1 className="updates-header">Updates page here</h1>
                 <br />
-                {
-                    sampleData.map((listing) => {
-                        return (
-                            <BoardListing
-                                listingTitle={listing.listingTitle}
-                                photoLink={listing.photoLink}
-                                price={listing.price}
-                                datePosted={listing.datePosted}
-                            />
-                        )
-                    })
-                }
+                <div className="updates-grid-container">
+                    {
+                        sampleData.map((listing) => {
+                            return (
+                                <BoardListing
+                                    listingTitle={listing.listingTitle}
+                                    photoLink={listing.photoLink}
+                                    price={listing.price}
+                                    datePosted={listing.datePosted}
+                                    id={listing.id}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

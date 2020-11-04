@@ -14,6 +14,7 @@ import Collaboration from "./pages/Collaboration";
 import Learn from "./pages/Learn";
 import About from './pages/About';
 import Updates from "./pages/Updates";
+import KeyboardListing from './pages/KeyboardListing';
 
 const App: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Route path="/market/learn" exact component={Learn} />
           <Route path="/market/about" exact component={About} />
           <Route path="/market/updates" exact component={Updates} />
+          <Route path="market/shop/:keyboardid" component={KeyboardListing} />
           <Route component={FourOhFour} />
         </Switch>
       </BrowserRouter>
