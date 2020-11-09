@@ -1,0 +1,26 @@
+.learn-guide-container{
+    display: grid;
+    grid-template-areas: 
+    "switch polls"
+    "terms faqs"
+    "review";
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.learn-guide-switch {
+    grid-area: switch;
+}
+.learn-guide-poll{
+    grid-area: polls
+}
+.learn-guide-terms{
+    grid-area: terms;
+}
+.learn-guide-faqs{
+    grid-area: faqs;
+}
+.learn-guide-review{
+    grid-area: review;
+}
