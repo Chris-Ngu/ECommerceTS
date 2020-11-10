@@ -9,17 +9,18 @@ const NavigationBar = () => {
     const handleSubmit = () => {
         alert("Search query: " + searchQuery);
     }
-    
+
     return (
-        
+
         <Navbar
             bg="dark"
             expand="lg"
             variant="dark"
         >
             <Navbar.Brand
-                href="/market">
-                KeebClack
+                href="/market"
+            >
+                KeebClack Market
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
