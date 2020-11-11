@@ -11,7 +11,7 @@ const Why = () => {
     return (
         <div>
             <Nav />
-            <div className="why-container">
+            <Container className="why-container">
                 <div className="why-description">
                     <h4>What is a mechanical keyboard</h4>
                     <p>
@@ -35,25 +35,30 @@ const Why = () => {
                     <Container>
                         <Col>
                             <Row>
-                                <Image
-                                    src={require("../images/dirtykeyboard.jpg")}
-                                    rounded
-                                    width="400"
-                                    height="350"
-                                />
+                                <Container>
+                                    <Image
+                                        src={require("../images/dirtykeyboard.jpg")}
+                                        rounded
+                                        width="400"
+                                        height="350"
+                                    />
+                                </Container>
                             </Row>
+
                             <Row>
-                                <Image
-                                    src={require("../images/tfue.jpg")}
-                                    rounded
-                                    width="400"
-                                    height="260"
-                                />
+                                <Container>
+                                    <Image
+                                        src={require("../images/tfue.jpg")}
+                                        rounded
+                                        width="400"
+                                        height="260"
+                                    />
+                                </Container>
                             </Row>
                         </Col>
                     </Container>
                 </div>
-            </div>
+            </Container>
         </div>
     )
 }

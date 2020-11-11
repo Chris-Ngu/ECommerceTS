@@ -12,7 +12,7 @@ const Market = () => {
             <Nav />
             <div className="market-container">
 
-                <div className="market-advertise">
+                <Container className="market-advertise">
                     <Jumbotron
                         fluid
                     >
@@ -25,7 +25,7 @@ const Market = () => {
                         </Container>
                     </Jumbotron>
 
-                </div>
+                </Container>
                 <Container className="market-shop-by">
                     <Row>
                         <Col className="market-sub">
@@ -41,7 +41,7 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=realforce") }}
                                     >
                                         Realforce
-                        </Button>
+                                     </Button>
                                 </Col>
                                 <Col>
                                     <Button
@@ -49,7 +49,7 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=drop") }}
                                     >
                                         Drop
-                        </Button>
+                                    </Button>
                                 </Col>
                                 <Col>
                                     <Button
@@ -57,7 +57,7 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=annepro") }}
                                     >
                                         Anne Pro
-                        </Button>
+                                   </Button>
                                 </Col>
                                 <Col>
                                     <Button
@@ -65,7 +65,7 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=ducky") }}
                                     >
                                         Ducky
-                        </Button>
+                                    </Button>
                                 </Col>
                                 <Col>
                                     <Button
@@ -73,7 +73,7 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=realforce") }}
                                     >
                                         Corsair
-                        </Button>
+                                    </Button>
                                 </Col>
                                 <Col>
                                     <Button
@@ -81,53 +81,58 @@ const Market = () => {
                                         onClick={() => { history.push("/market/shop?brand=logitech") }}
                                     >
                                         Logitech
-                        </Button>
+                                    </Button>
                                 </Col>
-                                <Col>
-                                    <Button
-                                        size="sm"
-                                        onClick={() => { history.push("/market/shop?brand=razer") }}
-                                    >
-                                        Razer
-                        </Button>
-                                </Col>
+
                             </Row>
                         </Col>
-                        <Col
-                            className="market-sub">
+                        <Col className="market-sub">
+
                             <img
                                 src={require("../images/keyboard.png")}
                             />
                             <p>Switches</p>
-                            <Button
-                                size="sm"
-                                onClick={() => { history.push("/market/shop?switch=gateron") }}
-                            >
-                                Gateron
-                        </Button>
-                            <Button
-                                size="sm"
-                                onClick={() => { history.push("/market/shop?switch=kailh") }}
-                            >Kailh
-                        </Button>
-                            <Button
-                                size="sm"
-                                onClick={() => { history.push("/market/shop?switch=cherry") }}
-                            >
-                                Cherry
-                        </Button>
-                            <Button
-                                size="sm"
-                                onClick={() => { history.push("/market/shop?switch=novelkeys") }}
-                            >
-                                NovelKeys
-                        </Button>
-                            <Button
-                                size="sm"
-                                onClick={() => { history.push("/market/shop?switch=pandas") }}
-                            >
-                                Pandas
-                        </Button>
+                            <Row>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        onClick={() => { history.push("/market/shop?switch=gateron") }}
+                                    >
+                                        Gateron
+                                    </Button>
+                                </Col>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        onClick={() => { history.push("/market/shop?switch=kailh") }}
+                                    >Kailh
+                                    </Button>
+                                </Col>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        onClick={() => { history.push("/market/shop?switch=cherry") }}
+                                    >
+                                        Cherry
+                                    </Button>
+                                </Col>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        onClick={() => { history.push("/market/shop?switch=novelkeys") }}
+                                    >
+                                        NovelKeys
+                                </Button>
+                                </Col>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        onClick={() => { history.push("/market/shop?switch=pandas") }}
+                                    >
+                                        Pandas
+                                </Button>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                 </Container>
@@ -160,12 +165,12 @@ const Market = () => {
                             </Container>
                         </Col>
                         <Col className="market-poll-container">
-                            Featured Poll
-                            </Col>
+                            <h4>Poll</h4>
+                        </Col>
                     </Row>
                 </Container>
             </div>
-        </div>
+        </div >
     )
 }
 

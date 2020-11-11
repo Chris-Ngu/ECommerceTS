@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import BoardListing from "../components/BoardListing";
 
 import Nav from "../components/Nav";
+import { Container } from "react-bootstrap";
 
 const Shop = () => {
     const sampleData = [
@@ -54,9 +55,9 @@ const Shop = () => {
     return (
         <div>
             <Nav />
-            <div className="shop-page">
+            <Container className="shop-page">
                 <h4 className="shop-header">Mechanical Keyboards Catalogue</h4>
-                <div className="shop-grid-wrapper">
+                <Container className="shop-grid-wrapper">
                     {
                         sampleData.map((listing) => {
                             return (
@@ -70,8 +71,8 @@ const Shop = () => {
                             )
                         })
                     }
-                </div>
-            </div>
+                </Container>
+            </Container>
         </div>
     );
 }
