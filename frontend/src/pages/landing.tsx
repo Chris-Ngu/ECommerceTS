@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import '../styles/landing.scss';
 
@@ -92,7 +93,7 @@ const Landing: React.FC = () => {
     return (
         <div className="landingContainer">
 
-            <div className="hero-image">
+            <Container className="hero-image">
                 <button
                     className="landing-signin"
                     onClick={() => history.push('/login')}
@@ -111,48 +112,50 @@ const Landing: React.FC = () => {
                         className="landing-button"
                         onClick={() => history.push('/menu')}
                     >
-                            Main page   
+                        Main page
                     </button>
                 </div>
-            </div >
+            </Container>
 
-            <div className="landing-information">
-                <div>
-                    <button
-                        className="land-info-banner"
-                        onClick={() => panelCount(0)}
-                    >
-                        <img src={require('../images/duty-free.png')} alt="marketplace" />
-                        <h4>Moderated Marketplace</h4>
-                        <hr />
-                    </button>
-                </div>
-                <div>
-                    <button
-                        className="land-info-banner"
-                        onClick={() => panelCount(1)}
-                    >
-                        <img src={require('../images/conversation.png')} alt="community" />
-                        <h4>Universal Community</h4>
-                        <hr />
-                    </button>
-                </div>
-                <div>
-                    <button
-                        className="land-info-banner"
-                        onClick={() => panelCount(2)}
-                    >
-                        <img src={require('../images/toggle.png')} alt="toggle" />
-                        <h4>Endless options</h4>
-                        <hr />
-                    </button>
-                </div>
-            </div>
-            <div className="landing-panel">
+            <Container className="landing-information">
+                <Row>
+                    <Col>
+                        <button
+                            className="land-info-banner"
+                            onClick={() => panelCount(0)}
+                        >
+                            <img src={require('../images/duty-free.png')} alt="marketplace" />
+                            <h4>Moderated Marketplace</h4>
+                            <hr />
+                        </button>
+                    </Col>
+                    <Col>
+                        <button
+                            className="land-info-banner"
+                            onClick={() => panelCount(1)}
+                        >
+                            <img src={require('../images/conversation.png')} alt="community" />
+                            <h4>Universal Community</h4>
+                            <hr />
+                        </button>
+                    </Col>
+                    <Col>
+                        <button
+                            className="land-info-banner"
+                            onClick={() => panelCount(2)}
+                        >
+                            <img src={require('../images/toggle.png')} alt="toggle" />
+                            <h4>Endless options</h4>
+                            <hr />
+                        </button>
+                    </Col>
+                </Row>
+            </Container>
+            <Container className="landing-panel">
                 {
                     info(panel)
                 }
-            </div>
+            </Container>
 
             <footer>
                 <div>

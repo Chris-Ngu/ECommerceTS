@@ -8,6 +8,7 @@ $blink-color: rgb(51,204,255);
         rgba(0, 0, 0, 0.4)), 
         url("../images/keycon.jpg");
     height: 100vh;
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,24 +61,20 @@ $blink-color: rgb(51,204,255);
 }
 
 .landing-information {
-    display: grid;
-    grid-template-areas: "marketplace community options";
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 320px;
     background-image: linear-gradient(rgb(152, 152, 152), black);
+    text-align: center;
+    padding-top: 1px;
 }
 .land-info-banner {
     background-color: transparent;
     outline: none;
     border: none;
-    margin-left: 25%;
     margin-top: 50px;
     color: white;
     transition: margin 0.5s ease-out;
 
 
     img {
-        margin-top: 20px;
         width: 120px;
         height: 120px;
     }

@@ -1,10 +1,6 @@
 .menu-container {
-    margin-top: 300px;
-    display: grid;
-    grid-template-areas: 'market community applications';
-    grid-column: 1fr 1fr 1fr;
+    margin-top: 200px;
 }
-
 .menu-button{
     border: none;
     outline: none;
@@ -16,11 +12,9 @@
 
 .menu-container button:hover {
     background-color: gray;
-
 }
 
 .menu-market-container {
-    grid-area: 'market';
     text-align: center;
     img {
         width: 220px;
@@ -30,7 +24,6 @@
 
 .menu-community-container {
     opacity: .4;
-    grid-area: 'community';
     text-align: center;
     img {
         width: 220px;
@@ -40,7 +33,6 @@
 
 .menu-applications-container {
     opacity: .4;
-    grid-area: 'applications';
     text-align: center;
     img {
         width: 220px;

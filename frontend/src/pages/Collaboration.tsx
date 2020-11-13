@@ -1,11 +1,12 @@
 import React from "react";
-import { Button, Form, Jumbotron } from "react-bootstrap";
+import { Button, Container, Form, Jumbotron } from "react-bootstrap";
 import Nav from "../components/Nav";
+
 const Collaboration = () => {
     return (
         <div>
             <Nav />
-            <div>
+            <Container>
                 <Jumbotron>
                     <h1>Future Collaborations!</h1>
                     <p>
@@ -21,7 +22,7 @@ const Collaboration = () => {
                         </Form>
                     </div>
                 </Jumbotron>
-            </div>
+            </Container>
         </div>
     )
 }

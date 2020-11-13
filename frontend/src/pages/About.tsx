@@ -6,12 +6,13 @@
 import "../styles/about.scss";
 import React from "react";
 import Nav from "../components/Nav";
+import { Container } from "react-bootstrap";
 
 const About = () => {
     return (
         <div>
             <Nav />
-            <div className="market-about-container">
+            <Container className="market-about-container">
                 <h4>
                     Created by
                 </h4>
@@ -35,7 +36,7 @@ const About = () => {
                 <footer>
                     Thank you for everyone that has contributed to this project!
                 </footer>
-            </div>
+            </Container>
         </div>
     )
 }
