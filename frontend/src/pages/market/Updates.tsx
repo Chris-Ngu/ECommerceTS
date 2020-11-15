@@ -1,8 +1,8 @@
-import "../styles/Updates.scss";
+import "../../styles/market/Updates.scss";
 import React from "react";
 
-import Nav from "../components/Nav";
-import BoardListing from "../components/BoardListing";
+import Nav from "../../components/Nav";
+import BoardListing from "../../components/BoardListing";
 
 
 

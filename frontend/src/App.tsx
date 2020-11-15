@@ -6,15 +6,15 @@ import Login from './pages/login';
 import FourOhFour from './pages/404';
 import Menu from './pages/menu'
 
-import Market from './pages/Market';
-import Shop from './pages/Shop';
-import Guide from "./pages/guide";
-import Why from "./pages/why";
-import Collaboration from "./pages/Collaboration";
-import Learn from "./pages/Learn";
-import About from './pages/About';
-import Updates from "./pages/Updates";
-import KeyboardListing from './pages/KeyboardListing';
+import Market from './pages/market/Market';
+import Shop from './pages/market/Shop';
+import Guide from "./pages/market/guide";
+import Why from "./pages/market/why";
+import Collaboration from "./pages/market/Collaboration";
+import Learn from "./pages/market/Learn";
+import About from './pages/market/About';
+import Updates from "./pages/market/Updates";
+import KeyboardListing from './pages/market/KeyboardListing';
 
 const App: React.FC = () => {
   return (

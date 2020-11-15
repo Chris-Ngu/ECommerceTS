@@ -1,8 +1,8 @@
-import '../styles/Market.scss';
+import '../../styles/market/Market.scss';
 import React from 'react';
 import { Container, Image, Jumbotron, Button, Row, Col } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import Nav from '../components/Nav';
+import Nav from "../../components/Nav";
 
 const Market = () => {
     const history = useHistory();
@@ -31,7 +31,7 @@ const Market = () => {
                         <Col className="market-sub">
 
                             <img
-                                src={require("../images/brand.png")}
+                                src={require("../../images/brand.png")}
                             />
                             <p>Brand</p>
                             <Row>
@@ -89,7 +89,7 @@ const Market = () => {
                         <Col className="market-sub">
 
                             <img
-                                src={require("../images/keyboard.png")}
+                                src={require("../../images/keyboard.png")}
                             />
                             <p>Switches</p>
                             <Row>
@@ -141,7 +141,7 @@ const Market = () => {
                         <Col className="market-media-container">
                             <h4>Featured Media</h4>
                             <Image
-                                src={require("../images/ren.gif")}
+                                src={require("../../images/ren.gif")}
                                 fluid
                                 rounded
                                 alt="Featured Media"

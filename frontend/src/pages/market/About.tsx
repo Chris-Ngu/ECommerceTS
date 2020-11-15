@@ -3,9 +3,9 @@
     https://developer.github.com/v3/repos/collaborators/
 */
 
-import "../styles/about.scss";
+import "../../styles/market/about.scss";
 import React from "react";
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 import { Container } from "react-bootstrap";
 
 const About = () => {

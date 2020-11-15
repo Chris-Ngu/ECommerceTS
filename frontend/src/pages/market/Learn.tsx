@@ -1,8 +1,7 @@
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Nav from "../components/Nav";
-import "../styles/Learn.scss";
-
+import Nav from "../../components/Nav";
+import "../../styles/market/Learn.scss";
 
 const Learn = () => {
     return (
@@ -13,7 +12,7 @@ const Learn = () => {
                     <Row>
                         <Col className="learn-guide-switch">
                             <Image
-                                src={require("../images/friends.png")}
+                                src={require("../../images/friends.png")}
                                 rounded
                                 width={50}
                                 height={50}
@@ -23,7 +22,7 @@ const Learn = () => {
                         </Col>
                         <Col className="learn-guide-poll">
                             <Image
-                                src={require("../images/friends.png")}
+                                src={require("../../images/friends.png")}
                                 rounded
                                 width={50}
                                 height={50}
@@ -35,7 +34,7 @@ const Learn = () => {
                     <Row>
                         <Col className="learn-guide-terms">
                             <Image
-                                src={require("../images/friends.png")}
+                                src={require("../../images/friends.png")}
                                 rounded
                                 width={50}
                                 height={50}
@@ -45,7 +44,7 @@ const Learn = () => {
                         </Col>
                         <Col className="learn-guide-faqs">
                             <Image
-                                src={require("../images/friends.png")}
+                                src={require("../../images/friends.png")}
                                 rounded
                                 width={50}
                                 height={50}
@@ -57,7 +56,7 @@ const Learn = () => {
                     <Row>
                         <Col className="learn-guide-review">
                             <Image
-                                src={require("../images/friends.png")}
+                                src={require("../../images/friends.png")}
                                 rounded
                                 width={50}
                                 height={50}

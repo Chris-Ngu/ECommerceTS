@@ -1,8 +1,7 @@
-import "../styles/why.scss";
-
+import "../../styles/market/why.scss";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 import { Container, Col, Image, Row, Button } from "react-bootstrap";
 
 const Why = () => {
@@ -37,7 +36,7 @@ const Why = () => {
                             <Row>
                                 <Container>
                                     <Image
-                                        src={require("../images/dirtykeyboard.jpg")}
+                                        src={require("../../images/dirtykeyboard.jpg")}
                                         rounded
                                         width="400"
                                         height="350"
@@ -48,7 +47,7 @@ const Why = () => {
                             <Row>
                                 <Container>
                                     <Image
-                                        src={require("../images/tfue.jpg")}
+                                        src={require("../../images/tfue.jpg")}
                                         rounded
                                         width="400"
                                         height="260"

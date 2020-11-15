@@ -157,22 +157,25 @@ const Landing: React.FC = () => {
                 }
             </Container>
 
-            <footer>
-                <div>
-                    <a href='#'>Customer Support</a>
-                    <a href='#'>Contact us</a>
-                    <a href='#'>Terms of Use</a>
-                    <a href='#'>Help Center</a>
-                </div>
-                <div>
-                    <a href='#'>Investors</a>
-                    <a href='#'>Careers</a>
-                    <a href='#'>Legal Notices</a>
-                    <a href='#'>Cookies preferences</a>
-                </div>
-            </footer>
-
-            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            <Container>
+                <Row style={{ marginTop: -50 }}>
+                    <Col>
+                        <Row><a href='#' style={{ margin: "auto" }}>Customer Support</a></Row>
+                        <Row><a href='#' style={{ margin: "auto" }}>Contact us</a></Row>
+                        <Row><a href='#' style={{ margin: "auto" }}> Terms of Use</a></Row>
+                        <Row><a href='#' style={{ margin: "auto" }}> Help Center</a></Row>
+                    </Col>
+                    <Col>
+                        <Row><a href='#'>Investors</a></Row>
+                        <Row><a href='#'>Careers</a></Row>
+                        <Row><a href='#'>Legal Notices</a></Row>
+                        <Row><a href='#'>Cookies preferences</a></Row>
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            </Container>
         </div >
     )
 }

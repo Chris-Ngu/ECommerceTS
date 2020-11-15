@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Form, Jumbotron } from "react-bootstrap";
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 
 const Collaboration = () => {
     return (

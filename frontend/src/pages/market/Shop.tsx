@@ -1,11 +1,11 @@
 /*
     fetch types of keyboards here
 */
-import "../styles/Shop.scss";
+import "../../styles/market/Shop.scss";
 import React, { useState } from "react";
-import BoardListing from "../components/BoardListing";
+import BoardListing from "../../components/BoardListing";
 
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 import { Container } from "react-bootstrap";
 
 const Shop = () => {

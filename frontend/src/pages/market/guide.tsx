@@ -1,8 +1,8 @@
-import "../styles/guide.scss"
+import "../../styles/market/guide.scss"
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 
 const Guide = () => {
     return (
