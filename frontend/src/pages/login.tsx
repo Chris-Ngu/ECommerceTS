@@ -1,8 +1,16 @@
 // NPM
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
+import { SERVER_ADDRESS } from "../serverConfig";
 
 // Styles
 import '../styles/login.scss';
+
+type UserType = {
+    email: string
+    password: string
+};
+
 const Login: React.FC = () => {
     const [loginEmail, onLogimEmailChange] = useState('');
     const [loginPassword, onLoginPasswordChange] = useState('');
@@ -63,6 +71,23 @@ const Login: React.FC = () => {
 
         container.style.height = '250px'
     }
+    const loginUser = () => {
+        // check data input here
+        if (loginEmail.length === 0 || loginPassword.length === 0) {
+            return alert("One or more fields were left blank, please try again");
+        }
+
+        const user: UserType = {
+            email: loginEmail,
+            password: loginPassword
+        }
+
+        // Handle POST login request here, maybe use some type of login token
+        Axios.post(SERVER_ADDRESS + "/login", user)
+        .then((res) => {
+            alert("USER HAS LOGGEDI IN HERE")
+        })
+    }
 
     //handle form submits here
     return (
@@ -92,7 +117,7 @@ const Login: React.FC = () => {
                         id='login-input'
                         placeholder='Email'
                         required={true}
-                        onChange={(e) => onLogimEmailChange(loginEmail + e.target.value)}
+                        onChange={(e) => onLogimEmailChange(e.target.value)}
                     />
                     <br /> <br />
                     <input
@@ -100,12 +125,12 @@ const Login: React.FC = () => {
                         id="login-input"
                         placeholder='Password'
                         required={true}
-                        onChange={(e) => onLoginPasswordChange(loginPassword + e.target.value)}
+                        onChange={(e) => onLoginPasswordChange(e.target.value)}
                     />
                     <br /> <br />
                     <button
-                        type='submit'
                         id="login-button"
+                        onClick={() => loginUser()}
                     >
                         <span>Login</span>
                     </button>

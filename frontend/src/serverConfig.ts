@@ -1,0 +1,1 @@
+export const SERVER_ADDRESS: string = "http://localhost:5000"; 
