@@ -1,15 +1,12 @@
 // NPM
 import React, { useState } from 'react';
-import Axios from 'axios';
+import Axios, { AxiosResponse } from 'axios';
+
+import { ForgotUserType, RegisterUserType, UserType } from "../interfaces/UserTypes";
 import { SERVER_ADDRESS } from "../serverConfig";
 
 // Styles
 import '../styles/login.scss';
-
-type UserType = {
-    email: string
-    password: string
-};
 
 const Login: React.FC = () => {
     const [loginEmail, onLogimEmailChange] = useState('');
@@ -84,9 +81,54 @@ const Login: React.FC = () => {
 
         // Handle POST login request here, maybe use some type of login token
         Axios.post(SERVER_ADDRESS + "/login", user)
-        .then((res) => {
-            alert("USER HAS LOGGEDI IN HERE")
-        })
+            .then((res: AxiosResponse) => {
+                alert("USER HAS LOGGEDI IN HERE");
+            })
+            .catch((err: unknown) => {
+                alert(err);
+            });
+    }
+    const registerUser = () => {
+        //check data input here
+
+        if (registerEmail.length === 0 || registerPassword.length === 0 || registerConfirmPassword.length === 0) {
+            return alert("One or more fields was left empty, please try again");
+        }
+
+        if (registerPassword !== registerConfirmPassword) {
+            return alert("Passwords do not match, please try again");
+        }
+
+        const user: RegisterUserType = {
+            email: registerEmail,
+            password: registerPassword,
+            confirmPassword: registerConfirmPassword
+        };
+
+        Axios.post(SERVER_ADDRESS + "/register", user)
+            .then((res: AxiosResponse) => {
+                alert("USER HAS BEEN REGISTERED");
+            })
+            .catch((err: unknown) => {
+                alert(err);
+            });
+    }
+    const forgotPassword = () => {
+        if (forgotEmail.length === 0) {
+            return alert("Please fill in your email to proceed");
+        }
+
+        const user: ForgotUserType = {
+            email: forgotEmail
+        };
+
+        Axios.post(SERVER_ADDRESS + "/forgot", user)
+            .then((res: AxiosResponse) => {
+                alert("An password reset email has been sent to the provided address!");
+            })
+            .catch((err: unknown) => {
+                alert(err);
+            })
     }
 
     //handle form submits here
@@ -184,8 +226,8 @@ const Login: React.FC = () => {
                     />
                     <br /> <br />
                     <button
-                        type='submit'
                         id='login-button'
+                        onClick={() => registerUser()}
                     >
                         <span>Register</span>
                     </button>
