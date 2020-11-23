@@ -82,7 +82,7 @@ const Login: React.FC = () => {
         // Handle POST login request here, maybe use some type of login token
         Axios.post(SERVER_ADDRESS + "/login", user)
             .then((res: AxiosResponse) => {
-                alert("USER HAS LOGGEDI IN HERE");
+                alert(res.data);
             })
             .catch((err: unknown) => {
                 alert(err);
@@ -153,7 +153,7 @@ const Login: React.FC = () => {
                 </header>
 
                 {/* LOGIN FORM */}
-                <form id='login-form'>
+                <div id='login-form'>
                     <input
                         type='text'
                         id='login-input'
@@ -196,7 +196,7 @@ const Login: React.FC = () => {
                             onClick={forgotAnimate}
                         >Forgot Password</a>
                     </footer>
-                </form>
+                </div>
 
                 {/*REGISTER FORM */}
                 <form id='register-form'>

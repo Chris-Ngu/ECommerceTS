@@ -9,7 +9,7 @@ const connection = createConnection({
     port: 5432,
     username: "postgres",
     password: "postgres",
-    database: "KeebClack",
+    database: "keebclack",
     entities: [
         User,
         Keyboard
