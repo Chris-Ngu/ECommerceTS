@@ -5,7 +5,7 @@ export default class Keyboard extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column(() => Number)
+    @Column()
     price: number;
 
     @CreateDateColumn()
@@ -14,6 +14,6 @@ export default class Keyboard extends BaseEntity {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @Column(() => Date)
+    @Column()
     soldAt: Date;
 }

@@ -1,6 +1,6 @@
 import { createConnection } from "typeorm";
 
-import User from "./entities/User";
+import User from "./entities/Users";
 import Keyboard from "./entities/Keyboard";
 
 const connection = createConnection({

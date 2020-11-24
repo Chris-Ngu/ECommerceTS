@@ -1,7 +1,7 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export default class User extends BaseEntity {
+export default class Users extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
     
@@ -11,7 +11,7 @@ export default class User extends BaseEntity {
     @Column({unique: true})
     username! :string;
 
-    @Column(() => String)
+    @Column()
     password!: string;
 
     
