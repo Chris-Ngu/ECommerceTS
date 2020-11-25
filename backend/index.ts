@@ -1,26 +1,26 @@
-import Express, { json, Request, Response } from "express";
+import Express, { Request, Response } from "express";
 import Cors from 'cors';
+import argon2 from "argon2";
 
 import Keyboard from "./src/entities/Keyboard";
 import Users from "./src/entities/Users";
-import Connection from "./src/Connection";
-import { QueryFailedError } from "typeorm";
+import { Connection } from "./src/Connection";
 
 Connection.then((connection) => {
   const usersRepository = connection.getRepository(Users);
   const keyboardRepository = connection.getRepository(Keyboard);
+  const port = 4000;
 
   const app = Express().use(Express.json());
   app.use(Cors());
-  const port: number = 4000;
 
   app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`)
   });
 
   app.get("/", (_, res: Response) => {
-    res.send("Hello world");
-  })
+    res.send("Welcome to KeebWorld!");
+  });
 
   // LOGIN ROUTE HERE, NEED IMPLEMENTATION
   app.post("/login", async (_, res: Response) => {
@@ -50,27 +50,30 @@ Connection.then((connection) => {
   });
 
   // ---------      CREATE      ---------------------------
-  // Need to hash password here
   app.post("/users", async (req: Request, res: Response) => {
     try {
+      req.body.password = await argon2.hash(req.body.password);
       const user = await usersRepository.create(req.body);
       const results = await usersRepository.save(user);
       return res.send(results);
     }
     catch (err: any) {
-      if(err.code === 23505){
+      if (err.code === 23505) {
         return res.send("This account already exists!");
       }
       return res.send("GENERIC CREATE USER ERROR HERE");
-
     }
-
   });
 
   app.post("/keyboards", async (req: Request, res: Response) => {
-    const keyboard = await keyboardRepository.create(req.body);
-    const results = await keyboardRepository.save(keyboard);
-    return res.send(results);
+    try {
+      const keyboard = await keyboardRepository.create(req.body);
+      const results = await keyboardRepository.save(keyboard);
+      return res.send(results);
+    }
+    catch (err: any) {
+      return res.send("GENERIC ERROR OCCURED HERE");
+    }
   });
 
   // ---------      DELETE SPECIFIC      ---------------------------
@@ -86,14 +89,14 @@ Connection.then((connection) => {
 
   // ---------      UPDATE SPECIFIC      ---------------------------
   app.put("/user:id", async (req: Request, res: Response) => {
-    const user = await usersRepository.findOne(req.params.id);
+    const user = await usersRepository.findOne(req.params.id) as Users;
     usersRepository.merge(user, req.body);
     const results = await usersRepository.save(user);
     return res.send(results);
   });
 
   app.put("/keyboards/:id", async (req: Request, res: Response) => {
-    const keyboard = await keyboardRepository.findOne(req.params.id);
+    const keyboard = await keyboardRepository.findOne(req.params.id) as Keyboard;
     keyboardRepository.merge(keyboard, req.body);
     const results = await keyboardRepository.save(keyboard);
     return res.send(results);
