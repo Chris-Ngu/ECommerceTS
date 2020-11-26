@@ -27,6 +27,10 @@ Connection.then((connection) => {
     res.send("MESSAGE FROM BACKEND");
   });
 
+  app.post("/forgot", async (req: Request, res: Response) => {
+    return res.send("FORGOT PASSWORD QUERY SENT HERE w/ " + req.body.email);
+  });
+
   // ---------      GET ALL     ---------------------------
   app.get("/users", async (_, res: Response) => {
     const users = await usersRepository.find();
