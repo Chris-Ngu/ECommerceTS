@@ -14,6 +14,7 @@ const Login: React.FC = () => {
     const [registerEmail, onRegisterEmailChange] = useState('');
     const [registerPassword, onRegisterPasswordChange] = useState('');
     const [registerConfirmPassword, onRegisterConfirmPasswordChange] = useState('');
+    const [registerUsername, onRegisterUsernameChange] = useState("");
     const [forgotEmail, onForgotEmailChange] = useState('');
 
     const registerAnimate = () => {
@@ -101,15 +102,20 @@ const Login: React.FC = () => {
 
         const user: RegisterUserType = {
             email: registerEmail,
+            username: registerUsername,
             password: registerPassword,
             confirmPassword: registerConfirmPassword
         };
 
-        Axios.post(SERVER_ADDRESS + "/register", user)
-            .then((res: AxiosResponse) => {
-                alert("USER HAS BEEN REGISTERED");
+        Axios.post(SERVER_ADDRESS + "/users", user)
+            .then((res) => {
+                alert(res);
+                // onRegisterUsernameChange("");
+                // onRegisterPasswordChange("");
+                // onRegisterEmailChange("");
+                // onRegisterConfirmPasswordChange("");
             })
-            .catch((err: unknown) => {
+            .catch((err) => {
                 alert(err);
             });
     }
@@ -124,7 +130,7 @@ const Login: React.FC = () => {
 
         Axios.post(SERVER_ADDRESS + "/forgot", user)
             .then((res: AxiosResponse) => {
-                alert("An password reset email has been sent to the provided address!");
+                alert(res);
             })
             .catch((err: unknown) => {
                 alert(err);
@@ -205,7 +211,15 @@ const Login: React.FC = () => {
                         id='login-input'
                         placeholder='Email'
                         required={true}
-                        onChange={(e) => onRegisterEmailChange(registerEmail + e.target.value)}
+                        onChange={(e) => onRegisterEmailChange(e.target.value)}
+                    />
+                    <br /> <br />
+                    <input
+                        type="test"
+                        id="login-input"
+                        placeholder="Username"
+                        required={true}
+                        onChange={(e) => onRegisterUsernameChange(e.target.value)}
                     />
                     <br /> <br />
                     <input
@@ -213,7 +227,7 @@ const Login: React.FC = () => {
                         id='login-input'
                         placeholder='Password'
                         required={true}
-                        onChange={(e) => onRegisterPasswordChange(registerPassword + e.target.value)}
+                        onChange={(e) => onRegisterPasswordChange(e.target.value)}
                     />
                     <br /> <br />
                     <input
@@ -221,7 +235,7 @@ const Login: React.FC = () => {
                         id='login-input'
                         placeholder='Confirm Password'
                         required={true}
-                        onChange={(e) => onRegisterConfirmPasswordChange(registerConfirmPassword + e.target.value)}
+                        onChange={(e) => onRegisterConfirmPasswordChange(e.target.value)}
 
                     />
                     <br /> <br />

@@ -5,6 +5,7 @@ export type UserType = {
 
 export type RegisterUserType = {
     email: string
+    username: string
     password: string
     confirmPassword: string
 };
