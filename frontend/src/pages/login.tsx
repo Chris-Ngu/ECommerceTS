@@ -130,7 +130,7 @@ const Login: React.FC = () => {
 
         Axios.post(SERVER_ADDRESS + "/forgot", user)
             .then((res: AxiosResponse) => {
-                alert(res);
+                alert(res.data);
             })
             .catch((err: unknown) => {
                 alert(err);
@@ -205,7 +205,7 @@ const Login: React.FC = () => {
                 </div>
 
                 {/*REGISTER FORM */}
-                <form id='register-form'>
+                <div id='register-form'>
                     <input
                         type='text'
                         id='login-input'
@@ -253,10 +253,10 @@ const Login: React.FC = () => {
                     >
                         Back to Login
                             </button>
-                </form>
+                </div>
 
                 {/*FORGOT FORM */}
-                <form
+                <div
                     id='forgot-form'
                 >
                     <input
@@ -264,12 +264,13 @@ const Login: React.FC = () => {
                         id='login-input'
                         required={true}
                         placeholder="Email"
-                        onChange={(e) => onForgotEmailChange(forgotEmail + e.target.value)}
+                        onChange={(e) => onForgotEmailChange(e.target.value)}
                     />
                     <br /> <br />
                     <button
                         type='submit'
                         id='login-button'
+                        onClick={forgotPassword}
                     >
                         <span>Continue</span>
                     </button>
@@ -282,7 +283,7 @@ const Login: React.FC = () => {
                         Back to Login
                             </button>
 
-                </form>
+                </div>
             </div>
         </body>
     )

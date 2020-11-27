@@ -1,4 +1,4 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
 
 @Entity()
 export default class Keyboard extends BaseEntity {
@@ -17,6 +17,9 @@ export default class Keyboard extends BaseEntity {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @Column()
+    @Column({ nullable: true })
     soldAt: string;
+
+    @Column({ nullable: true })
+    photoLink: string;
 }
