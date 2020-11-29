@@ -14,14 +14,27 @@ type ListingRequirements = {
 
 const BoardListing = (props: ListingRequirements) => {
     const history = useHistory();
+    let pictureToUse;
+    if (props.listingTitle.length === 0) {
+        pictureToUse = (<Image
+            src={require("../images/keyboard.png")}
+            alt="listing-image"
+            width={350}
+            height={150}
+        />)
+    } else {
+        pictureToUse = (<Image
+            src={props.listingTitle}
+            alt="listing-image"
+            width={350}
+            height={150}
+        />)
+    }
     return (
         <div className="boardlisting-container">
-            <Image
-                src={require("../images/placeholder-board.png")}
-                alt="listing-image"
-                width={350}
-                height={150}
-            />
+            {
+                pictureToUse
+            }
             <h4>{props.listingTitle}</h4>
             <p className="boardlisting-date">{props.datePosted}</p>
             <p className="boardlisting-price">${props.price}</p>
@@ -32,9 +45,11 @@ const BoardListing = (props: ListingRequirements) => {
                 }}
             >
                 More details
-            </Button>
+                </Button>
         </div >
     )
 }
+
+
 
 export default BoardListing;
