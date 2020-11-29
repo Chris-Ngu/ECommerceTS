@@ -281,7 +281,7 @@ const Login: React.FC = () => {
                         onClick={backToLoginFromForgot}
                     >
                         Back to Login
-                            </button>
+                    </button>
 
                 </div>
             </div>

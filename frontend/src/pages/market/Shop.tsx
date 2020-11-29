@@ -1,6 +1,6 @@
 import "../../styles/market/Shop.scss";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Axios from "axios";
 
@@ -20,17 +20,15 @@ const Shop = () => {
         alert(switchType);
     }
 
-    const initialQuery = () => {
+    useEffect(() => {
         Axios.get(SERVER_ADDRESS + "/keyboards")
             .then((queryObject) => {
                 changeDatabaseQuery(queryObject.data);
             })
             .catch((err) => {
                 alert(err);
-            })
-    }
-
-    initialQuery();
+            });
+    }, []);
 
     return (
         <div>
