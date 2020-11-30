@@ -20,7 +20,7 @@ const Shop = () => {
         alert(switchType);
     }
 
-    useEffect(() => {
+    const updateSearchListings = () => {
         Axios.get(SERVER_ADDRESS + "/keyboards")
             .then((queryObject) => {
                 changeDatabaseQuery(queryObject.data);
@@ -28,6 +28,10 @@ const Shop = () => {
             .catch((err) => {
                 alert(err);
             });
+    }
+
+    useEffect(() => {
+        updateSearchListings();
     }, []);
 
     return (

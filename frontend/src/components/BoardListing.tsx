@@ -15,17 +15,18 @@ type ListingRequirements = {
 const BoardListing = (props: ListingRequirements) => {
     const history = useHistory();
     let pictureToUse;
-    if (props.listingTitle.length === 0) {
+
+    if (props.photoLink === null) {
         pictureToUse = (<Image
-            src={require("../images/keyboard.png")}
-            alt="listing-image"
+            src={require("../images/placeholder-board.png")}
+            alt="listing-image-missing"
             width={350}
             height={150}
         />)
     } else {
         pictureToUse = (<Image
-            src={props.listingTitle}
-            alt="listing-image"
+            src={props.photoLink}
+            alt="listing-image-placeholder"
             width={350}
             height={150}
         />)

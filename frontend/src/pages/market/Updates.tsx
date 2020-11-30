@@ -1,29 +1,30 @@
 import "../../styles/market/Updates.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Nav from "../../components/Nav";
 import BoardListing from "../../components/BoardListing";
+import Axios from "axios";
+import { SERVER_ADDRESS } from "../../serverConfig";
 
 
 
 const Updates = () => {
-    const sampleData = [
-        {
-            listingTitle: "1 title",
-            photoLink: "1 link",
-            price: 1,
-            datePosted: "1 date",
-            id: 666
-        }, {
-            listingTitle: "2 title",
-            photoLink: "2 link",
-            price: 2,
-            datePosted: "2 date",
-            id: 666
-        },
-    ]
+    const [databaseQuery, changeDatabaseQuery] = useState<any>([]);
 
-    const updatesSchedules = pullUpdates();
+    const updateListings = () => {
+        Axios.get(SERVER_ADDRESS + "/keyboards")
+            .then((queryObject) => {
+                changeDatabaseQuery(queryObject.data);
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    }
+
+    useEffect(() => {
+        updateListings();
+    }, []);
+
 
     return (
         <div>
@@ -33,13 +34,13 @@ const Updates = () => {
                 <br />
                 <div className="updates-grid-container">
                     {
-                        sampleData.map((listing) => {
+                        databaseQuery.map((listing: any) => {
                             return (
                                 <BoardListing
                                     listingTitle={listing.listingTitle}
                                     photoLink={listing.photoLink}
                                     price={listing.price}
-                                    datePosted={listing.datePosted}
+                                    datePosted={listing.createdAt}
                                     id={listing.id}
                                 />
                             )
@@ -49,10 +50,6 @@ const Updates = () => {
             </div>
         </div>
     )
-}
-
-const pullUpdates = () => {
-    // pull update catalogue here
 }
 
 export default Updates;
