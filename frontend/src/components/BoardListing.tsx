@@ -30,6 +30,7 @@ const BoardListing = (props: ListingRequirements) => {
             width={350}
             height={150}
         />)
+
     }
     return (
         <div className="boardlisting-container">
@@ -37,10 +38,11 @@ const BoardListing = (props: ListingRequirements) => {
                 pictureToUse
             }
             <h4>{props.listingTitle}</h4>
-            <p className="boardlisting-date">{props.datePosted}</p>
+            <p className="boardlisting-date">Date: {props.datePosted.substring(0, 10)}</p>
+            <p className="boardListing-time">Time: {props.datePosted.substring(11, 19)}</p>
             <p className="boardlisting-price">${props.price}</p>
-            <p className="boardlisting-id">id: {props.id}</p>
             <Button
+                className="boardListing-button"
                 onClick={() => {
                     history.push("/market/shop/" + props.id)
                 }}

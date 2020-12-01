@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import Axios from "axios";
 
 import Landing from './pages/landing';
 import Login from './pages/login';
@@ -20,9 +21,27 @@ import Terms from "./pages/market/terms";
 import Faqs from "./pages/market/faqs";
 import Reviews from "./pages/market/reviews";
 
-import KeyboardListing from './pages/market/KeyboardListing';
+import KeyboardListing from "./pages/Listing";
+import { SERVER_ADDRESS } from './serverConfig';
+
+
 
 const App: React.FC = () => {
+  const [listingIds, changeListingIds] = useState<any>([]);
+  useEffect(() => {
+    let collectedIds: any = [];
+    Axios.get(SERVER_ADDRESS + "/keyboards")
+      .then((keyboardObject) => {
+        collectedIds.push({
+          id: keyboardObject.data.id
+        });
+      })
+      .then(() => {
+        changeListingIds(collectedIds);
+        console.log(listingIds);
+      })
+  })
+
   return (
     <div>
       <BrowserRouter>
@@ -38,12 +57,17 @@ const App: React.FC = () => {
           <Route path="/market/learn" exact component={Learn} />
           <Route path="/market/about" exact component={About} />
           <Route path="/market/updates" exact component={Updates} />
-          <Route path="/market/switchguide" exact component={SwitchGuide}/>
-          <Route path="/market/polls" exact component={Polls}/>
-          <Route path="/market/terms" exact component={Terms}/>
-          <Route path="/market/faqs" exact component={Faqs}/>
-          <Route path="/market/reviews" exact component={Reviews}/>
-          <Route path="market/shop/:keyboardid" component={KeyboardListing} />
+          <Route path="/market/switchguide" exact component={SwitchGuide} />
+          <Route path="/market/polls" exact component={Polls} />
+          <Route path="/market/terms" exact component={Terms} />
+          <Route path="/market/faqs" exact component={Faqs} />
+          <Route path="/market/reviews" exact component={Reviews} />
+          {
+            listingIds.map((listingId: any) =>
+              (<Link to={"/market/shop/" + listingId.id} />)
+            )
+          }
+          <Route path="/market/shop/:keyboardId" component={KeyboardListing} />
           <Route component={FourOhFour} />
         </Switch>
       </BrowserRouter>
