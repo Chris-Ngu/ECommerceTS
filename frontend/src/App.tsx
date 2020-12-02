@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import Axios from "axios";
 
@@ -24,24 +24,22 @@ import Reviews from "./pages/market/reviews";
 import KeyboardListing from "./pages/Listing";
 import { SERVER_ADDRESS } from './serverConfig';
 
-
-
 const App: React.FC = () => {
-  const [listingIds, changeListingIds] = useState<any>([]);
-  useEffect(() => {
-    let collectedIds: any = [];
+  let x: any = [];
+  const getIds = () => {
+    let keyboards: any = [];
     Axios.get(SERVER_ADDRESS + "/keyboards")
       .then((keyboardObject) => {
-        collectedIds.push({
-          id: keyboardObject.data.id
+        keyboardObject.data.forEach((data: any) => {
+          keyboards.push({
+            id: data.id
+          });
         });
       })
       .then(() => {
-        changeListingIds(collectedIds);
-        console.log(listingIds);
-      })
-  })
-
+        x = keyboards;
+      });
+  }
   return (
     <div>
       <BrowserRouter>
@@ -63,7 +61,10 @@ const App: React.FC = () => {
           <Route path="/market/faqs" exact component={Faqs} />
           <Route path="/market/reviews" exact component={Reviews} />
           {
-            listingIds.map((listingId: any) =>
+            getIds()
+          }
+          {
+            x.map((listingId: any) =>
               (<Link to={"/market/shop/" + listingId.id} />)
             )
           }

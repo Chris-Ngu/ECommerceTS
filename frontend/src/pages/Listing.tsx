@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from "react";
+import Axios from "axios";
+import { SERVER_ADDRESS } from "../serverConfig";
 
 const Listing: React.FC = (props: any) => {
-    const [listingId, changeListingId] = useState("");
+    const [keyboardId, changeKeyboardId] = useState("");
+    const [keyboardData, changeKeyboardData] = useState({});
+
+    const checkIfExists = () => {
+        const id = props.match.params.keyboardId;
+        Axios.get(SERVER_ADDRESS + "/keyboards/" + id)
+            .then((data) => {
+                if (data.data.id !== undefined || data.data.id !== null) {
+                    changeKeyboardData(data.data);
+                    changeKeyboardId(id);
+                }
+                else {
+                    alert("this keyboard does not exist");
+                }
+            });
+    }
 
     useEffect(() => {
-        changeListingId(props.match.params.listingId);
-        alert(listingId);
-    })
+        checkIfExists();
+    }, []);
 
     return (
         <div>
             <h1>
                 {
-                    listingId
+                    keyboardId
+                }
+                {
+                    
+                    console.log(keyboardData)
                 }
             </h1>
         </div>
