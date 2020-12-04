@@ -22,4 +22,10 @@ export default class Keyboard extends BaseEntity {
 
     @Column({ nullable: true })
     photoLink: string;
+
+    @Column({
+        nullable: true,
+        default: "Seller provided no description"
+    })
+    description: string;
 }
