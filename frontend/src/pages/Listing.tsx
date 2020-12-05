@@ -7,7 +7,6 @@ import Nav from "../components/Nav";
 
 
 const Listing: React.FC = (props: any) => {
-    const [keyboardId, changeKeyboardId] = useState("");
     const [keyboardData, changeKeyboardData] = useState<any>({});
     const [isKeyboardAvailable, changeIsKeyboardAvailable] = useState("Out of Stock");
 
@@ -17,7 +16,6 @@ const Listing: React.FC = (props: any) => {
             .then((data) => {
                 if (data.data.id !== undefined || data.data.id !== null) {
                     changeKeyboardData(data.data);
-                    changeKeyboardId(id);
                     if (data.data.soldAt === null || data.data.soldAt === undefined) {
                         changeIsKeyboardAvailable("In stock");
                     }
@@ -75,7 +73,22 @@ const Listing: React.FC = (props: any) => {
                     <Col>
                         {
                             checkForNullPhoto()
+
                         }
+                        <h4>Reviews from similar models:</h4>
+                        <hr />
+                        <h4>Amazing!</h4>
+                        <h6>Review by: guest</h6>
+                        <p>2020-01-30</p>
+                        <p>Best bang for your buck, definetly worth the money I spent on it</p>
+                        <h4>Amazing!</h4>
+                        <h6>Review by: guest</h6>
+                        <p>2020-01-30</p>
+                        <p>Best bang for your buck, definetly worth the money I spent on it</p>
+                        <h4>Amazing!</h4>
+                        <h6>Review by: guest</h6>
+                        <p>2020-01-30</p>
+                        <p>Best bang for your buck, definetly worth the money I spent on it</p>
                     </Col>
                     <Col>
                         <h3>{keyboardData.listingName}</h3>
@@ -85,6 +98,17 @@ const Listing: React.FC = (props: any) => {
                         {
                             buyOption()
                         }
+                        <p>listing ID: {keyboardData.id}</p>
+
+                        <h4>(PLACE USERNAME HERE) reviews:</h4>
+                        <hr />
+                        <h6>Review by: guest</h6>
+                        <p>2020-01-30</p>
+                        <p>Best bang for your buck, definetly worth the money I spent on it</p>
+                        <h6>Review by: guest</h6>
+                        <p>2020-01-30</p>
+                        <p>Best bang for your buck, definetly worth the money I spent on it</p>
+
                     </Col>
                 </Row>
             </Container>
