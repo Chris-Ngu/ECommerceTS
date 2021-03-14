@@ -38,7 +38,7 @@ const App: React.FC = () => {
       })
       .then(() => {
         x = keyboards;
-      });
+      })
   }
   return (
     <div>
