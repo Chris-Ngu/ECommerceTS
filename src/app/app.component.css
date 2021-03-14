@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("/assets/Fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+#mainScreenBody {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+#mainScreenNav {
+    width: 100%;
+    display: inline-flex;
+    background-color: black;
+}
+
+#navLogo {
+    width: 70px;
+    height: 70px;
+    margin-left: 15px;
+}
+
+#navRight {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#registerButton {
+    font-weight: 800;
+}
+
+#signinButton {
+    height: 100%;
+    background-color: green;
+}
+
+.navButton {
+    margin: auto;
+    border: none;
+    padding: 19px;
+    background: none;
+    font-size: 20px;
+    color: white;
+    font-family: Montserrat;
+}
