@@ -5,3 +5,4 @@
 
 ### Technologies
 * Angular.TS
+* Ng-Bootstrap
