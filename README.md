@@ -4,5 +4,4 @@
 * Master - Current branch. Keyboard collection list
 
 ### Technologies
-* Angular.TS
-* Ng-Bootstrap
+* React.TS
