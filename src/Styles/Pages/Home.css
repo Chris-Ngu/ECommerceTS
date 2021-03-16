@@ -1,0 +1,32 @@
+#mainScreenBody {
+    height: 100vh;
+    background-color: gray;
+}
+
+#mainScreenInnerBody {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+#mainScreenSloganContainer {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.title {
+    font-family: Montserrat;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+#sloganButton {
+    margin-top: 50px;
+    border: 1px solid green;
+    width: 115px;
+    height: 30px;
+    border-radius: 15px;
+    outline: none;
+    background: green;
+    color: white
+}

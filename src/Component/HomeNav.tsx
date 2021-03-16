@@ -4,8 +4,7 @@ const HomeNav = () => {
     return (
         <nav id="mainScreenNav">
             <a href="/">
-                <img id="navLogo" src="assets/logo.png" alt="logo">
-                </img>
+                <img id="navLogo" src={require("../Assets/Images/logo.png")} alt="logo" />
             </a>
             <div id="navRight">
                 <button className="navButton" id="registerButton">Register</button>

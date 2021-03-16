@@ -1,17 +1,7 @@
-/* @font-face {
+@font-face {
     font-family: Montserrat;
-    src: url("/assets/Fonts/Montserrat-Regular.ttf") format("truetype");
-} */
-
-/* #mainScreenBody {
-    height: 100vh;
-    background-color: gray;
-} */
-
-/* #mainScreenInnerBody {
-    max-width: 1920px;
-    margin: 0 auto;
-} */
+    src: url("/src/Assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
 
 #mainScreenNav {
     width: 100%;
@@ -45,28 +35,5 @@
     padding: 19px;
     background: none;
     color: white;
-    /* font-family: Montserrat; */
-}
-
-/* #mainScreenSloganContainer {
-    margin-top: 70px;
-    text-align: center;
-} */
-
-/* .title {
     font-family: Montserrat;
-    color: white;
-    font-weight: 700;
-    text-align: center;
 }
-
-#sloganButton {
-    margin-top: 50px;
-    border: 1px solid green;
-    width: 115px;
-    height: 30px;
-    border-radius: 15px;
-    outline: none;
-    background: green;
-    color: white
-} */
