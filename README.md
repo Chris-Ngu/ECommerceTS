@@ -4,4 +4,5 @@
 * Master - Current branch. Keyboard collection list
 
 ### Technologies
-* React.TS
+* React.TS Frontend
+* ASP.NET Core Web API Backend
