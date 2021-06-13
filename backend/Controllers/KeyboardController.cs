@@ -80,7 +80,8 @@ namespace backend.Controllers
             _context.keyboards.Add(keyboard);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetKeyboard", new { id = keyboard.id }, keyboard);
+            // return CreatedAtAction("GetKeyboard", new { id = keyboard.id }, keyboard);
+            return CreatedAtAction(nameof(GetKeyboard), new { id = keyboard.id }, keyboard);
         }
 
         // DELETE: api/Keyboard/5

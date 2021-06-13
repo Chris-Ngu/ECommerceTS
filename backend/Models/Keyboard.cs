@@ -1,9 +1,8 @@
 namespace backend.Models
 {
-    public class Keyboard
+    // hide secret information here
+    public class Keyboard : KeyboardDTO
     {
-        public long id { get; set; }
-        public string name { get; set; }
-        public bool isSold { get; set; }
+        public string secretString = "";
     }
 }
