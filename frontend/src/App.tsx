@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import HomePage from "./Pages/home";
+import HomePage from "./Pages/Home/home";
+import CollectionPage from "./Pages/Collection/collection";
 
-import './Styles/Pages/App.css';
+import "./App.css";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={HomePage} />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/collection" exact component={CollectionPage} />
         </Switch>
       </BrowserRouter>
     </div>
