@@ -6,3 +6,6 @@
 ### Technologies
 * React.TS Frontend
 * ASP.NET Core Web API Backend
+
+### Future Iterations
+* Changing from React to Angular
