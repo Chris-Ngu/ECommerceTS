@@ -8,4 +8,4 @@
 * ASP.NET Core Web API Backend
 
 ### Future Iterations
-* Changing from React to Angular
+* Changing from React to Angularr
